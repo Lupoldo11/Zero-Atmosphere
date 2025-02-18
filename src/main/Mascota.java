@@ -9,11 +9,16 @@ public abstract class Mascota {
     protected String nombre;
     protected int edad;
     protected PropietarioMascota amo;
-    
+    protected String code;
+
+    protected static Codigo codigo = new Codigo();
+
     public Mascota(String nombre, int edad, PropietarioMascota amo) {
         this.nombre = nombre;
         this.edad = edad;
         this.amo = amo;
+        this.code = codigo.generarMascota();
+
     }
 
     public String getNombre() {
@@ -40,7 +45,8 @@ public abstract class Mascota {
         this.amo = amo;
     }
 
-    // Métodos abstractos dentro de la clase Mascota
+    // Métodos abstractos
     public abstract void dormir();
+
     public abstract void comer();
 }
