@@ -12,6 +12,6 @@ public class Minero extends Persona {
     //Metodos
     @Override
     public String toString(){
-        return "\n"+super.texto_toString() + "\nTrabajo: Minero"; //añadir codigo
+        return Codigo.generarMinero()+"\n"+super.texto_toString() + "\nTrabajo: Minero";
     }
 }
