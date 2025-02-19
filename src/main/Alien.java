@@ -1,5 +1,4 @@
 package main;
-import java.util.Scanner;
 /**
  *
  * @author gasto
@@ -36,14 +35,7 @@ public abstract class Alien {
         this.dificultad = dificultad;
     }
     
-    
     public abstract void comer();
-    
     public abstract void dormir();
-    
-    
     public abstract void atacar();
-
-    @Override
-    public abstract String toString();   
 }

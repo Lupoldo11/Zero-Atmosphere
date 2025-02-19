@@ -1,3 +1,6 @@
+//*) Genera los 4 principales tripulantes (Carmen, Laura, Lopez, federico) , la nave principal, la nave objetivo
+//IDEA: hacer un menu inicial: 1) Hace un escaner a la nave y genera todo automáticamente
+//                                             2) Salta la IA_Bob y va pidiendo datos y genera el resultado
 package main;
 /**
  *
@@ -27,9 +30,27 @@ public class IA_EVA {
         }
     }
     
+    //MÓDULO EN PRUEBAS !!!
+    public static void metodo_toString(Vector ejemplo,Object ejemplo2){
+        for(int i=0; i<ejemplo.size();i++){
+            Object objeto = ejemplo.get(i);
+            if (objeto instanceof Soldado){
+                System.out.println(ejemplo.get(i).toString());
+            }
+            if (objeto instanceof Minero) {
+                System.out.println(ejemplo.get(i).toString());
+            }
+            if (objeto instanceof Raiser) {
+                System.out.println(ejemplo.get(i).toString());
+            }
+            if (objeto instanceof Nomun) {
+                System.out.println(ejemplo.get(i).toString());
+            }
+        }        
+    }
+            
     //Funcionamiento principal código (MAIN)
     public static void calculador(){
-        //*) Genera los 4 principales tripulantes (Carmen, Laura, Lopez, federico) , la nave principal, la nave objetivo
         //1)Num aliens (puede ser aleatorio o seleccion)
         String seleccion_num_alien = intro.next();
         int contador_Raiser=0, contador_Nomun=0, total_alien=0;
@@ -59,9 +80,33 @@ public class IA_EVA {
         
         //3)Lista soldados (nombres - toString) a intervenir (pedir a usuario)
         //4)Lista mineros (nombres - toString) a intervenir (pedir a usuario)
+        for(int i=0; i<listPersona.size();i++){ //esto se puede cambiar por el modulo=> metodo_toString()
+            Persona ejemplo = listPersona.get(i);
+            if (ejemplo instanceof Soldado){
+                System.out.println(listPersona.get(i).toString());
+            }
+            if (ejemplo instanceof Minero) {
+                System.out.println(listPersona.get(i).toString());
+            }
+        }
+        
         //6)Lista de aliens por tipos encontrados (toString de funciones de arriba)
-        //7)Vehiculos utilizados  (formula antia)
+        for(int i=0; i<listAlien.size();i++){//esto se puede cambiar por el modulo=> metodo_toString()
+            Alien ejemplo = listAlien.get(i);
+            if (ejemplo instanceof Raiser){
+                System.out.println(listAlien.get(i).toString());
+            }
+            if (ejemplo instanceof Nomun) {
+                System.out.println(listAlien.get(i).toString());
+            }
+        }
+        
+        //7)Vehiculos utilizados  (formula antia de empaquetamiento)
+        
+        
         //8) Coste Total Operación (formula ana)
+        double coste_total=0; //Aquí va la función de ana del SUMATORIO
+        System.out.println("El coste total del operativo es de: " + coste_total);
     }
     
     public static void main(String[] args) {
