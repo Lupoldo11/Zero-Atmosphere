@@ -6,8 +6,8 @@ package main;
 public class Minero extends Persona {
     //Atributos
     //Constructor
-    public Minero(String nombre, String apellidos) {
-        super(nombre, apellidos);
+    public Minero() {
+        super();
     }
     //Metodos
     @Override

@@ -1,4 +1,7 @@
 //*) Genera los 4 principales tripulantes (Carmen, Laura, Lopez, federico) , la nave principal, la nave objetivo
+//*)Arreglar los toString de los animales (perro,gato,pajaro) - lo del amo
+//*)Asociar el animal con su dueño
+//*)Arreglar AeroBikes
 package main;
 /**
  *
@@ -29,6 +32,7 @@ public class IA_EVA {
     public static void main(String[] args) {
         boolean salida=false;
         do {
+            LectorTxt.lectorFiles();
             System.out.println(Text.menu_seleccion_inicio);
             String seleccion = Text.intro.next();
             

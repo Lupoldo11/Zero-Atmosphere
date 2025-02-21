@@ -12,6 +12,7 @@ public class IA_BOB {
         //1)Num aliens (seleccion)
         System.out.println("Accion 1");
         int contador_Raiser, contador_Nomun, total_alien;
+        System.out.println("¿Cuántos alienígenas hay en la nave ?");
         total_alien = Text.intro.nextInt(); //Preguntar cantidad de alien en la nave
         Text.intro.nextLine();
         contador_Raiser= (int) (Math.random() * total_alien) + 1; 

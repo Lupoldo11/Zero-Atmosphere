@@ -8,8 +8,8 @@ public class Pajaro extends Mascota{
     protected String especie;
     protected boolean volador;
     
-    public Pajaro(String nombre, int edad, PropietarioMascota amo,String code,String color,String especie,boolean volador){
-        super(nombre,edad,amo,code);
+    public Pajaro(String color,String especie,boolean volador){
+        super("pajaro"); //añadir metodo para calcular edad de un pajaro
         this.color=color;
         this.especie=especie;
         this.volador=volador;
@@ -39,7 +39,7 @@ public class Pajaro extends Mascota{
 
     @Override
     public String toString() {
-        return "Pajaro " +nombre+ " edad "+edad+" amo "+amo+" de color "+color+" su especie es "+especie+" con codigo de mascota "+code;
+        return "Pajaro " +nombre+ " edad "+edad+" amo "+0+" de color "+color+" su especie es "+especie+" con codigo de mascota "+super.codigo;
     }
     
 }

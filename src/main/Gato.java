@@ -9,8 +9,8 @@ public class Gato extends Mascota {
     protected String color;
     protected String pelo;
 
-    public Gato(String nombre, int edad, PropietarioMascota amo, String code,String raza, String color, String pelo) {
-        super(nombre, edad, amo,code);
+    public Gato(String raza, String color, String pelo) {
+        super("gato"); //añadir metodo para calcular edad de un gato
         this.raza = raza;
         this.color = color;
         this.pelo = pelo;
@@ -61,7 +61,7 @@ public class Gato extends Mascota {
     @Override
     public String toString() {
         return "Gato cuyo nombre es " + nombre + " edad " + edad + " de raza "
-                + raza + " color " + color + " tipo de pelo " + pelo + " amo:" + amo+ " codigo de mascota: "+code;
+                + raza + " color " + color + " tipo de pelo " + pelo + " amo:" + 0+ " codigo de mascota: "+super.codigo;
     }
 
 }

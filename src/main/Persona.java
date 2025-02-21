@@ -6,24 +6,29 @@ package main;
 public class Persona {
     //Atributos
     private String nombre;
-    private String[] apellidos;
+    private String apellido1;
+    private String apellido2;
     private final int edad; 
     private Mascota mascota;
     
     //Contructores
-    public Persona(String nombre, String apellidos){
-        this.nombre= nombre;
-        this.apellidos= apellidos.split(" "); //Genera un array separando en el caracter puesto
+    public Persona(){
+        this.nombre= Text.fileNombres.get((int) (Math.random() * Text.fileNombres.size())); //Selecciona un nombre al azar
+        this.apellido1= Text.fileApellidos.get((int) (Math.random() * Text.fileApellidos.size())); //Selecciona un apellido al azar
+        this.apellido2= Text.fileApellidos.get((int) (Math.random() * Text.fileApellidos.size())); 
         this.edad= (int) (Math.random() * 100) + 10; //Edad máxima de una persona 100 años
-        double azar_mascota = Math.random();
-        if (azar_mascota<0.5) {
-            this.mascota= Mascota.generarMascota();
+        
+        //Saber si tendrá mascota
+        if (Math.random()<0.5) {
+            Mascota.generarMascota();//Asociar con algun humano
         }
     }
     
     public Persona(String nombre, String apellidos, int edad){
         this.nombre=nombre;
-        this.apellidos= apellidos.split(" ");
+        String[] apellidos_completo=apellidos.split(" ");
+        this.apellido1=apellidos_completo[0];
+        this.apellido2=apellidos_completo[1];
         this.edad=edad;
     }
     
@@ -35,11 +40,13 @@ public class Persona {
         this.nombre=cambio_nombre;
     }
     
-    public String[] getApellidos(){
-        return this.apellidos;
+    public String getApellidos(){
+        return this.apellido1+this.apellido2;
     }
     public void setApellidos(String apellidos){
-        this.apellidos=apellidos.split(" ");
+        String[] apellidos_completo=apellidos.split(" ");
+        this.apellido1=apellidos_completo[0];
+        this.apellido2=apellidos_completo[1];
     }
     
     public int getEdad(){
@@ -50,7 +57,7 @@ public class Persona {
     //Metodo toString
     public String texto_toString(){
         String texto_salida="Nombre: "+this.nombre+
-                                        "\nApellidos: "+this.apellidos[0]+" "+this.apellidos[1]+
+                                        "\nApellidos: "+this.apellido1+" "+this.apellido2+
                                         "\nEdad: "+this.edad;
         return texto_salida;
     }
@@ -58,13 +65,12 @@ public class Persona {
     //Metodo static que genera la listPersona [Auto-rellenable]
     public static void generadorPersona (int total_humanos, int num_soldados){
         for (int i=0;i<total_humanos;i++){
-            double azar_mascota = Math.random(); //Entre 0 y 1 para saber si tienen mascota o no
                     if (num_soldados!=0){
-                        Persona ejemplo1 = new Soldado("nombre","apellido"); //nombre (auto)/ apellidos (auto)/ edad (auto)/ peso?
+                        Persona ejemplo1 = new Soldado(); //nombre (auto)/ apellidos (auto)/ edad (auto)/ peso?
                         Text.listPersona.add(ejemplo1);
                         num_soldados--;
                     } else {
-                        Persona ejemplo2 = new Minero("nombre","apellido"); //nombre (auto)/ apellidos (auto)/ edad (auto)/ peso?
+                        Persona ejemplo2 = new Minero(); //nombre (auto)/ apellidos (auto)/ edad (auto)/ peso?
                         Text.listPersona.add(ejemplo2); 
                     }
         }

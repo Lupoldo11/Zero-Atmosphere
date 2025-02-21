@@ -8,8 +8,8 @@ public class Soldado extends Persona{
     private String rango;
     
     //Constructor
-    public Soldado(String nombre, String apellidos) {
-        super(nombre, apellidos);
+    public Soldado() {
+        super();
         this.rango= generadorRango();
     }
     

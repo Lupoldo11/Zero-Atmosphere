@@ -8,8 +8,8 @@ public class Perro extends Mascota{
     protected double peso;
     protected String size;
     
-    public Perro(String nombre, int edad, PropietarioMascota amo,String code,String raza,double peso,String size){
-        super(nombre,edad,amo,code);
+    public Perro(String raza,double peso,String size){
+        super("perro"); //añadir metodo para calcular edad de un perro
         this.raza=raza;
         this.peso=peso;
         this.size=size;
@@ -60,7 +60,7 @@ public class Perro extends Mascota{
     @Override
     public String toString() {
         return "Perro cuyo nombre es " +nombre+", de raza " + raza + ", pesa " + peso + "kgs, tamaño: " + size+ ". Propietario: "
-                + ""+amo+" codigo de mascota: "+code;
+                + ""+0+" codigo de mascota: "+super.codigo;
     }
     
     
