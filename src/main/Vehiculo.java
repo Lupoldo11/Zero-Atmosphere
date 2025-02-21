@@ -1,18 +1,22 @@
 package main;
 
 public abstract class Vehiculo {
+
     protected int numPersonas;
     protected int maxPersonas;
     protected TurboJet turbojet;
     protected Codigo codigo;
+    protected int capacidadCarburante;
+    protected int gastoCarburante;
 
-    public Vehiculo(int numPersonas, int maxPersonas, TurboJet turbojet, Codigo codigo) {
+    public Vehiculo(int numPersonas, int maxPersonas, TurboJet turbojet, Codigo codigo, int capacidadCarburante, int gastoCarburante) {
         this.numPersonas = numPersonas;
         this.maxPersonas = maxPersonas;
         this.turbojet = turbojet;
         this.codigo = codigo;
+        this.capacidadCarburante = capacidadCarburante;
+        this.gastoCarburante = gastoCarburante;
     }
-
     
 
     public Vehiculo(int numPersonas, TurboJet turbojet, Codigo codigo) {
@@ -53,9 +57,29 @@ public abstract class Vehiculo {
         this.maxPersonas = maxPersonas;
     }
 
+    public int getCapacidadCarburante() {
+        return capacidadCarburante;
+    }
+
+    public void setCapacidadCarburante(int capacidadCarburante) {
+        this.capacidadCarburante = capacidadCarburante;
+    }
+
+    public int getGastoCarburante() {
+        return gastoCarburante;
+    }
+
+    public void setGastoCarburante(int gastoCarburante) {
+        this.gastoCarburante = gastoCarburante;
+    }
+
+    public double calculaCarburante(double distancia) {
+        return Math.sqrt(distancia) * gastoCarburante;
+    }
+
     @Override
     public String toString() {
-        return "Vehiculo{" + "numPersonas=" + numPersonas + ", maxPersonas=" + maxPersonas + ", turbojet=" + turbojet + ", codigo=" + codigo + '}';
+        return "Vehiculo{" + "numPersonas=" + numPersonas + ", maxPersonas=" + maxPersonas + ", turbojet=" + turbojet + ", codigo=" + codigo + ", capacidadCarburante=" + capacidadCarburante + ", gastoCarburante=" + gastoCarburante + '}';
     }
 
 }

@@ -6,9 +6,8 @@ public class AeroBike extends Vehiculo {
     private String color;
     private boolean arrancado;
 
-    public AeroBike(int velocidadMax, String color, boolean arrancado, int numPersonas, int maxPersonas, TurboJet turbojet, Codigo codigo) {
-        super(numPersonas, turbojet, codigo);
-        this.maxPersonas = 2;
+    public AeroBike(int velocidadMax, String color, boolean arrancado, int numPersonas, int maxPersonas, TurboJet turbojet, Codigo codigo, int capacidadCarburante, int gastoCarburante) {
+        super(numPersonas, maxPersonas, turbojet, codigo, capacidadCarburante, gastoCarburante);
         this.velocidadMax = velocidadMax;
         this.color = color;
         this.arrancado = arrancado;
