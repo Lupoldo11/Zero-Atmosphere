@@ -5,30 +5,15 @@ package main;
  */
 public class Nomun extends Alien{
     //Atributo
-    public int nomun;
     public double autotraslacion;
+    
     //Constructor
-    public Nomun(int nomun, String codigoA, String arma, String dificultad, double autotraslacion) {
-        super(codigoA, arma, dificultad);
-        this.nomun = nomun;
+    public Nomun(String arma, String dificultad, double autotraslacion) {
+        super(arma, dificultad);
         this.autotraslacion = autotraslacion;
     }
-    //Metodo
-    public int alienigenasEsperadosNomun(){
-
-            nomun = (int) (Math.random() * 200) + 1;
-
-    return nomun;
-    }  
-
-    public int getNomun() {
-        return nomun;
-    }
-
-    public void setNomun(int nomun) {
-        this.nomun = nomun;
-    }
-
+    
+    //Metodo de la clase
     public double getAutotraslacion() {
         return autotraslacion;
     }
@@ -37,24 +22,25 @@ public class Nomun extends Alien{
         this.autotraslacion = autotraslacion;
     }
 
-
+    //Metodos abstractos del padre
     @Override
     public void comer() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("Hmmm");
     }
 
     @Override
     public void dormir() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("Duermiendo");
     }
 
     @Override
     public void atacar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("Atack!");
     }
 
+    //Metodo toString
     @Override
     public String toString() {
-        return "Nomun{" + '}';
+        return "Nomun";
     }
 }

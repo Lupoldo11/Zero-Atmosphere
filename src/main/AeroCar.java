@@ -41,14 +41,6 @@ public class AeroCar extends Vehiculo {
         return Math.sqrt(distancia) * 12;
     }
 
-    public String metodoTransmision(double distancia) {
-        if (distancia < 1) {
-            return "economico";
-        } else {
-            return "estelar";
-        }
-    }
-
     @Override
     public String toString() {
         return "AeroCar{" + "numMarchas=" + numMarchas + ", modelo=" + modelo + ", capacidadCarburante=" + capacidadCarburante + '}';

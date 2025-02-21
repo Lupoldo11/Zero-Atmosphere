@@ -1,11 +1,13 @@
 package main;
 
 public abstract class Vehiculo {
+    //Atributo
     protected int numPersonas;
     protected int maxPersonas;
     protected TurboJet turbojet;
     protected Codigo codigo;
 
+    //Constructor
     public Vehiculo(int numPersonas, int maxPersonas, TurboJet turbojet, Codigo codigo) {
         this.numPersonas = numPersonas;
         this.maxPersonas = maxPersonas;
@@ -13,14 +15,7 @@ public abstract class Vehiculo {
         this.codigo = codigo;
     }
 
-    
-
-    public Vehiculo(int numPersonas, TurboJet turbojet, Codigo codigo) {
-        this.numPersonas = numPersonas;
-        this.turbojet = turbojet;
-        this.codigo = codigo;
-    }
-
+    //Getter y Setter
     public int getNumPersonas() {
         return numPersonas;
     }
@@ -53,6 +48,16 @@ public abstract class Vehiculo {
         this.maxPersonas = maxPersonas;
     }
 
+    //Metodo de Economia de distancia
+    public static String metodoTransmision(double distancia) {
+        if (distancia < 1) {
+            return "economico";
+        } else {
+            return "estelar";
+        }
+    }
+        
+    //Metodo toString
     @Override
     public String toString() {
         return "Vehiculo{" + "numPersonas=" + numPersonas + ", maxPersonas=" + maxPersonas + ", turbojet=" + turbojet + ", codigo=" + codigo + '}';

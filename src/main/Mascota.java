@@ -9,9 +9,9 @@ public abstract class Mascota {
     protected int edad;
     protected PropietarioMascota amo;
     protected String code;
-
     protected static Codigo codigo = new Codigo();
 
+    //Constructor
     public Mascota(String nombre, int edad, PropietarioMascota amo,String code) {
         this.nombre = nombre;
         this.edad = edad;
@@ -20,6 +20,7 @@ public abstract class Mascota {
 
     }
 
+    //Getter y Setter
     public String getNombre() {
         return nombre;
     }
@@ -32,10 +33,6 @@ public abstract class Mascota {
         return edad;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
     public PropietarioMascota getAmo() {
         return amo;
     }
@@ -44,8 +41,18 @@ public abstract class Mascota {
         this.amo = amo;
     }
 
+    //Metodos static genera listMascota
+    public static void generarMascota(){//Cambiar void por tipo Mascota
+        String seleccion_mascota= String.valueOf( (int) (Math.random() * 3) + 1);
+        switch (seleccion_mascota){
+            case "1" -> Text.listMascota.add(new Perro()); //crea perro;
+            case "2" -> Text.listMascota.add(new Gato()); //crea gato;
+            case "3" -> Text.listMascota.add(new Pajaro()); //crea pajaro;
+            default -> System.out.println(Text.error_seleccion);
+        }
+    }
+    
     // Métodos abstractos
     public abstract void dormir();
-
     public abstract void comer();
 }

@@ -8,35 +8,31 @@ public class Soldado extends Persona{
     private String rango;
     
     //Constructor
-    public Soldado(String nombre, String apellidos, int edad, double peso, String rango) {
-        super(nombre, apellidos, edad);
-        this.rango= nivelRango(rango);
+    public Soldado(String nombre, String apellidos) {
+        super(nombre, apellidos);
+        this.rango= generadorRango();
     }
-    //Metodos
-    private static String nivelRango(String rango){
+    
+    //Setter y Getter
+    public String getRango(){
+        return this.rango;
+    }
+    public void setRango(String cambio_rango){
+        this.rango=cambio_rango;
+    }
+    
+    //Metodo generadorRango [Auto-rellenable]
+    private static String generadorRango(){
         String nombreRango=null;
-        do {
-            switch (rango) {
-                case "1": 
-                    nombreRango="General";
-                    break;
-                case "2": 
-                    nombreRango="Coronel";
-                    break;
-                case "3": 
-                    nombreRango="Capitán";
-                    break;
-                case "4": 
-                    nombreRango="Sargento";
-                    break;
-                case "5": 
-                    nombreRango="Tropa";
-                    break;
-                default: 
-                    System.out.println("Rango no disponible");
-                    break;
-            }
-        } while (nombreRango==null);
+        String rango = String.valueOf((int) (Math.random() * 5) + 1);
+        switch (rango) {
+                case "1" -> nombreRango="General";
+                case "2" -> nombreRango="Coronel";
+                case "3" -> nombreRango="Capitán";
+                case "4" -> nombreRango="Sargento";
+                case "5" -> nombreRango="Tropa";
+                default -> System.out.println(Text.error_seleccion);
+        }
         return nombreRango;
     }
     

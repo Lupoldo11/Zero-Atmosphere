@@ -4,30 +4,16 @@ package main;
  * @author gasto
  */
 public class Raiser extends Alien {
-
-   public int raiser;
-   public double invisibilidad;
+    //Atributos
+    public double invisibilidad;
    
-    public Raiser(int raiser, String codigoA, String arma, String dificultad,double invisibilidad) {
-        super(codigoA, arma, dificultad);
-        this.raiser = raiser;
+   //Constructores
+    public Raiser(String arma, String dificultad,double invisibilidad) {
+        super(arma, dificultad);
         this.invisibilidad = invisibilidad;
     }
-    public int alienigenasEsperadosRaisers(){
 
-            raiser = (int) (Math.random() * 200) + 1;
-
-    return raiser;
-    }   
-
-    public int getRaiser() {
-        return raiser;
-    }
-
-    public void setRaiser(int raiser) {
-        this.raiser = raiser;
-    }
-
+    //Metodos de la clase
     public double getInvisibilidad() {
         return invisibilidad;
     }
@@ -36,21 +22,23 @@ public class Raiser extends Alien {
         this.invisibilidad = invisibilidad;
     }
 
+    //Metodos abstractos del padre
     @Override
     public void comer() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("Está comiendo");
     }
 
     @Override
     public void dormir() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("Zzzz");
     }
 
     @Override
     public void atacar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("Al ataque!!!!");
     }
 
+    //Metodo toString
    @Override
     public String toString(){
     return "raisers";
