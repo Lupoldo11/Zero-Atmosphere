@@ -7,7 +7,7 @@ public class Minero extends Persona {
     //Atributos
     //Constructor
     public Minero() {
-        super();
+        super(Codigo.generarMinero());
     }
     //Metodos
     @Override

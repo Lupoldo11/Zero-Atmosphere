@@ -3,6 +3,7 @@ package main;
  *
  * @author Lupoldo
  */
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Vector;
@@ -29,6 +30,9 @@ public class Text {
     public static List<String> fileApellidos;
     public static List<String> fileMascotaN;
     public static List<String> fileMascotaR;
+    
+    //HashMap para asociacion mascota-dueño
+    public static HashMap<String, String> mascota_dueño = new HashMap<>();
     
     //LO GUARDO AQUí PORQUE NO SE DONDE PONERLO (Objeto Persona predefinidos)
     final Persona laura = new Persona("Laura","Lopez Gomez",20);

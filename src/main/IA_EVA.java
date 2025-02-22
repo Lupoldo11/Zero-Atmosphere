@@ -2,6 +2,7 @@
 //*)Arreglar los toString de los animales (perro,gato,pajaro) - lo del amo
 //*)Asociar el animal con su dueño
 //*)Arreglar AeroBikes
+//*)toString de Mascota
 package main;
 /**
  *

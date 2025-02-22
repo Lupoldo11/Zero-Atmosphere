@@ -4,13 +4,15 @@ public class AeroCar extends Vehiculo {
 
     private int numMarchas;
     private String modelo;
-    private int capacidadCarburante;
+    private double estado_deposito;
+    private static final int maxPersona=4;
+    private static final double capacidadCarburante=50;
 
-    public AeroCar(int numMarchas, String modelo, int capacidadCarburante, int numPersonas, int maxPersonas, TurboJet turbojet, Codigo codigo) {
-        super(numPersonas, maxPersonas, turbojet, codigo);
+    public AeroCar(int numMarchas, String modelo, double estado_deposito, int numPersonas,TurboJet turbojet) {
+        super(numPersonas, AeroCar.maxPersona, turbojet);
         this.numMarchas = numMarchas;
         this.modelo = modelo;
-        this.capacidadCarburante = capacidadCarburante;
+        this.estado_deposito = estado_deposito;
     }
 
     public int getNumMarchas() {
@@ -28,15 +30,7 @@ public class AeroCar extends Vehiculo {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-
-    public int getCapacidadCarburante() {
-        return capacidadCarburante;
-    }
-
-    public void setCapacidadCarburante(int capacidadCarburante) {
-        this.capacidadCarburante = capacidadCarburante;
-    }
-
+    
     public double calculaCarburante(double distancia) {
         return Math.sqrt(distancia) * 12;
     }

@@ -4,9 +4,9 @@ public class TurboJet {
 
     private int potencia;
     private int gastoCarburante;
-    private Codigo codigo;
+    private String codigo;
 
-    public TurboJet(int potencia, int gastoCarburante, Codigo codigo) {
+    public TurboJet(int potencia, int gastoCarburante, String codigo) {
         this.potencia = potencia;
         this.gastoCarburante = gastoCarburante;
         this.codigo = codigo;
@@ -28,12 +28,8 @@ public class TurboJet {
         this.gastoCarburante = gastoCarburante;
     }
 
-    public Codigo getCodigo() {
+    public String getCodigo() {
         return codigo;
-    }
-
-    public void setCodigo(Codigo codigo) {
-        this.codigo = codigo;
     }
 
     @Override

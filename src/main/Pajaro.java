@@ -9,10 +9,14 @@ public class Pajaro extends Mascota{
     protected boolean volador;
     
     public Pajaro(String color,String especie,boolean volador){
-        super("pajaro"); //añadir metodo para calcular edad de un pajaro
+        super(edadPajaro()); //añadir metodo para calcular edad de un pajaro
         this.color=color;
         this.especie=especie;
         this.volador=volador;
+    }
+    
+    public static int edadPajaro(){
+        return (int) (Math.random() * 7) + 1;
     }
     
     @Override

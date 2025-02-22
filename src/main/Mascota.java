@@ -10,7 +10,7 @@ public abstract class Mascota {
     protected String codigo ;
 
     //Constructor
-    public Mascota(String animal, int edad) {
+    public Mascota(int edad) {
         this.nombre = Text.fileMascotaN.get((int) (Math.random() * Text.fileMascotaN.size())); //Selecciona un nombre al azar
         this.codigo = Codigo.generarMascota();
         this.edad=edad;
@@ -28,16 +28,21 @@ public abstract class Mascota {
     public int getEdad() {
         return edad;
     }
+    
+    public String getCodigo(){
+        return this.codigo;
+    }
 
     //Metodos static genera listMascota
-    public static void generarMascota(){//Cambiar void por tipo Mascota
+    public static void generarMascota(String codigo){//Cambiar void por tipo Mascota
         String seleccion_mascota= String.valueOf( (int) (Math.random() * 3) + 1);
         switch (seleccion_mascota){
-            case "1" -> Text.listMascota.add(new Perro("raza",30,"pequeño")); //crea perro;
+            case "1" -> Text.listMascota.add(new Perro("raza","pequeño"));//crea perro;
             case "2" -> Text.listMascota.add(new Gato("raza","color","pelo")); //crea gato;
             case "3" -> Text.listMascota.add(new Pajaro("color","especie",true)); //crea pajaro;
             default -> System.out.println(Text.error_seleccion);
         }
+        Text.mascota_dueño.put(Text.listMascota.get(Text.listMascota.size()-1).getCodigo(),codigo);
     }
     
     // Métodos abstractos

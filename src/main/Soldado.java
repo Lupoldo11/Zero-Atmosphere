@@ -9,7 +9,7 @@ public class Soldado extends Persona{
     
     //Constructor
     public Soldado() {
-        super();
+        super(Codigo.generarSoldado());
         this.rango= generadorRango();
     }
     

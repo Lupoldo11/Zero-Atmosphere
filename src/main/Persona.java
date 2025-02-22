@@ -9,21 +9,23 @@ public class Persona {
     private String apellido1;
     private String apellido2;
     private final int edad; 
-    private Mascota mascota;
+    private String codigo;
     
     //Contructores
-    public Persona(){
+    public Persona(String codigo){
         this.nombre= Text.fileNombres.get((int) (Math.random() * Text.fileNombres.size())); //Selecciona un nombre al azar
         this.apellido1= Text.fileApellidos.get((int) (Math.random() * Text.fileApellidos.size())); //Selecciona un apellido al azar
         this.apellido2= Text.fileApellidos.get((int) (Math.random() * Text.fileApellidos.size())); 
         this.edad= (int) (Math.random() * 100) + 10; //Edad máxima de una persona 100 años
+        this.codigo=codigo;
         
         //Saber si tendrá mascota
         if (Math.random()<0.5) {
-            Mascota.generarMascota();//Asociar con algun humano
+            Mascota.generarMascota(codigo);//Asociar con algun humano
         }
     }
     
+    //Constructor para personajes PREDEFINIDOS
     public Persona(String nombre, String apellidos, int edad){
         this.nombre=nombre;
         String[] apellidos_completo=apellidos.split(" ");
@@ -33,6 +35,9 @@ public class Persona {
     }
     
     //Metodos Setter y Getter
+    public String getCodigo(){
+        return this.codigo;
+    }
     public String getNombre(){
         return this.nombre;
     }
@@ -53,6 +58,18 @@ public class Persona {
         return this.edad;
     }
     //No tiene set debido a que la edad no se cambia a voluntad
+    
+    //Metodo para saber mascotas de una persona
+    public void getMascotas(Persona persona){
+        int contador=0;
+        for(String codigo_mascota : Text.mascota_dueño.keySet()) {
+            String empleado = Text.mascota_dueño.get(codigo_mascota);
+            if (empleado.equals(persona.getCodigo())) {
+                System.out.println(Text.listMascota.get(contador).toString());
+            }
+            contador++;
+        }
+    }
     
     //Metodo toString
     public String texto_toString(){

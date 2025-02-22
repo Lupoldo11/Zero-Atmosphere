@@ -8,13 +8,17 @@ public class Perro extends Mascota{
     protected double peso;
     protected String size;
     
-    public Perro(String raza,double peso,String size){
-        super("perro"); //añadir metodo para calcular edad de un perro
+    public Perro(String raza,String size){
+        super(edadPerro()); //añadir metodo para calcular edad de un perro
         this.raza=raza;
-        this.peso=peso;
+        this.peso= (int) (Math.random() * 110) + 2;
         this.size=size;
     }
 
+    public static int edadPerro(){
+        return (int) (Math.random() * 13) + 1;
+    }
+    
     public String getRaza() {
         return raza;
     }

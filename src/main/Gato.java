@@ -10,12 +10,16 @@ public class Gato extends Mascota {
     protected String pelo;
 
     public Gato(String raza, String color, String pelo) {
-        super("gato"); //añadir metodo para calcular edad de un gato
+        super(edadGato()); //añadir metodo para calcular edad de un gato
         this.raza = raza;
         this.color = color;
         this.pelo = pelo;
     }
 
+    public static int edadGato(){
+        return (int) (Math.random() * 20) + 1;
+    }
+    
     public String getRaza() {
         return raza;
     }

@@ -5,14 +5,14 @@ public abstract class Vehiculo {
     protected int numPersonas;
     protected int maxPersonas;
     protected TurboJet turbojet;
-    protected Codigo codigo;
+    protected String codigo;
 
     //Constructor
-    public Vehiculo(int numPersonas, int maxPersonas, TurboJet turbojet, Codigo codigo) {
+    public Vehiculo(int numPersonas, int maxPersonas, TurboJet turbojet) {
         this.numPersonas = numPersonas;
         this.maxPersonas = maxPersonas;
         this.turbojet = turbojet;
-        this.codigo = codigo;
+        this.codigo = Codigo.generarAerocar();
     }
 
     //Getter y Setter
@@ -32,12 +32,8 @@ public abstract class Vehiculo {
         this.turbojet = turbojet;
     }
 
-    public Codigo getCodigo() {
+    public String getCodigo() {
         return codigo;
-    }
-
-    public void setCodigo(Codigo codigo) {
-        this.codigo = codigo;
     }
 
     public int getMaxPersonas() {
