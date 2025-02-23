@@ -13,9 +13,9 @@ public class Persona {
     
     //Contructores
     public Persona(String codigo){
-        this.nombre= Text.fileNombres.get((int) (Math.random() * Text.fileNombres.size())); //Selecciona un nombre al azar
-        this.apellido1= Text.fileApellidos.get((int) (Math.random() * Text.fileApellidos.size())); //Selecciona un apellido al azar
-        this.apellido2= Text.fileApellidos.get((int) (Math.random() * Text.fileApellidos.size())); 
+        this.nombre= Text.fileNombres.get((int) (Math.random() * (Text.fileNombres.size()-1))); //Selecciona un nombre al azar
+        this.apellido1= Text.fileApellidos.get((int) (Math.random() * (Text.fileApellidos.size()-1))); //Selecciona un apellido al azar
+        this.apellido2= Text.fileApellidos.get((int) (Math.random() * (Text.fileApellidos.size()-1))); 
         this.edad= (int) (Math.random() * 100) + 10; //Edad máxima de una persona 100 años
         this.codigo=codigo;
         

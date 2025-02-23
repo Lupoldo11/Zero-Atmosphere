@@ -6,6 +6,7 @@ public abstract class Vehiculo {
     protected int maxPersonas;
     protected TurboJet turbojet;
     protected String codigo;
+    protected int gastoCarburante=2;
 
     //Constructor
     public Vehiculo(int numPersonas, int maxPersonas, TurboJet turbojet) {
@@ -42,6 +43,10 @@ public abstract class Vehiculo {
 
     public void setMaxPersonas(int maxPersonas) {
         this.maxPersonas = maxPersonas;
+    }
+    
+    public double calculaCarburante(double distancia) {
+        return Math.sqrt(distancia) * gastoCarburante;
     }
 
     //Metodo de Economia de distancia

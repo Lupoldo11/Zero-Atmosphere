@@ -11,7 +11,7 @@ public abstract class Mascota {
 
     //Constructor
     public Mascota(int edad) {
-        this.nombre = Text.fileMascotaN.get((int) (Math.random() * Text.fileMascotaN.size())); //Selecciona un nombre al azar
+        this.nombre = Text.fileMascotaN.get((int) (Math.random() * (Text.fileMascotaN.size()-1))); //Selecciona un nombre al azar
         this.codigo = Codigo.generarMascota();
         this.edad=edad;
     }

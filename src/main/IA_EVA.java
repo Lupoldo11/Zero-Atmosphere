@@ -45,7 +45,7 @@ public class IA_EVA {
             }
         } while (salida!=true);
         
-        System.out.println(Text.error_seleccion);
+        System.out.println(Text.cierre_sesion);
     }
     
 }

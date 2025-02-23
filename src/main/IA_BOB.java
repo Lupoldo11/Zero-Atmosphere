@@ -10,6 +10,7 @@ public class IA_BOB {
     public static void calculadorSeleccion(){
         
         //1)Num aliens (seleccion)
+        System.out.println(Text.guiones);
         System.out.println("Accion 1");
         int contador_Raiser, contador_Nomun, total_alien;
         System.out.println("¿Cuántos alienígenas hay en la nave ?");
@@ -20,14 +21,21 @@ public class IA_BOB {
         //enlaza a la funcion de generarAlien
         Alien.generadorAlien(total_alien,contador_Raiser); 
         
+        //6)Lista de aliens por tipos encontrados (toString de funciones de arriba)
+        System.out.println(Text.guiones);
+        System.out.println("Accion 6");
+        System.out.println("Listado de Alien: "+Text.listAlien.size() +"\nNúmero de Nomun: "+contador_Nomun + "\nNúmero de Raiser: "+contador_Raiser);
+        
         //2)Distancia nave
+        System.out.println(Text.guiones);
         System.out.println("Accion 2");
-        System.out.print("¿Cual es la distancia hacia la otra nave?");
+        System.out.println("¿Cual es la distancia hacia la otra nave?");
         double distancia = Text.intro.nextDouble();
         Text.intro.nextLine();
-        System.out.println("La distancia con la nave es de: "+distancia+"año/luz; por tanto es: "+Vehiculo.metodoTransmision(distancia));
+        System.out.println("La distancia con la nave es de: "+distancia+" año/luz. \nPor tanto es: "+Vehiculo.metodoTransmision(distancia));
         
         //4)Lista mineros y soldados (nombres - toString) a intervenir (pedir a usuario)
+        System.out.println(Text.guiones);
         System.out.println("Accion 3 y 4");
         System.out.println("¿Cuántos soldados quieres?");
         int num_soldados = Text.intro.nextInt();
@@ -37,19 +45,18 @@ public class IA_BOB {
         Persona.generadorPersona(total_personas,num_soldados); //las mascotas se generan aleatorias aquí
         
         //Muestra todos los tripulantes de la nave
+        System.out.println(Text.guiones);
         System.out.println("Tamaño lista: "+Text.listPersona.size());
+        System.out.println(Text.guiones);
         IA_EVA.metodo_toString(Text.listPersona);
         
-        //6)Lista de aliens por tipos encontrados (toString de funciones de arriba)
-        System.out.println("Accion 6");
-        System.out.println("Listado de Alien: "+Text.listAlien.size() +"\nNúmero de Nomun: "+contador_Nomun + "\nNúmero de Raiser: "+contador_Raiser);
-        
         //7)Vehiculos utilizados  (formula antia de empaquetamiento)
+        System.out.println(Text.guiones);
         System.out.println("Accion 7");
         
         //8) Coste Total Operación (formula ana)
+        System.out.println(Text.guiones);
         System.out.println("Accion 8");
-        double coste_total=0; //Aquí va la función de ana del SUMATORIO
-        System.out.println("El coste total del operativo es de: " + coste_total);
+        System.out.println("El coste total del operativo es de: " + Sumatorio.costeTotal(distancia));
     }      
 }

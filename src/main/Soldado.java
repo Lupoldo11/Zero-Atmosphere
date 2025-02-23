@@ -38,6 +38,6 @@ public class Soldado extends Persona{
     
     @Override
     public String toString(){
-        return Codigo.generarSoldado()+"\n"+super.texto_toString() + "\nTrabajo: Soldado"; 
+        return "\nTrabajo: Soldado: "+Codigo.generarSoldado()+"\n"+super.texto_toString() + "\n"+Text.separador; 
     }
 }
