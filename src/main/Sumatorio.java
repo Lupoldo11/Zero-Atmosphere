@@ -1,8 +1,7 @@
 package main;
 
 import java.util.*;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class Sumatorio {
 
@@ -63,7 +62,7 @@ public class Sumatorio {
         return (sumarCostePersonas() + sumarCosteAliens() + sumarCosteVehiculos(2)) * 3;
     }
 
-    public static void imprimirFactura() {
+    public static String imprimirFactura() {
         int costeMineros = contadorPersonas()[0] * 20;
         int costeSoldados = contadorPersonas()[1] * 22;
         int costeCars = contadorVehiculos()[0] + AeroCar.gastoCarburante;
@@ -88,16 +87,51 @@ public class Sumatorio {
                 + "*********************************************************\n"
                 + "TOTAL: " + costeTotal() + "\n"
                 + "*********************************************************";
-
+        return factura;
+        
+    }
+    
+    public static void guardarFactura(String directorio){
         try {
-            FileWriter imprimir = new FileWriter("factura.txt"); // puedes añadir la ruta de archivo donde quieras que se guarde
-            imprimir.write(factura);
+            FileWriter imprimir = new FileWriter(directorio+"\\factura.txt"); // puedes añadir la ruta de archivo donde quieras que se guarde
+            imprimir.write(imprimirFactura());
             imprimir.close();
-            System.out.println("Factura creada");
+            System.out.println("Factura guardada");
         } catch (IOException e) {
-            System.out.println("Error al crear la factura");
+            System.out.println("Error al guardar la factura");
             e.printStackTrace();
         }
     }
+    
+    public static void menuFactura() {
+        System.out.println("1.Ver factura en pantalla \n 2.Guardar factura");
+        String seleccion = Text.intro.nextLine();
+        
+        switch(seleccion){
+            case "1":
+                System.out.println(imprimirFactura());
+                
+                break;
+            case "2":
+                boolean guardado = false;
+                do{
+                    System.out.println("Introduce el directorio donde guardar la factura");
+                    String dir = Text.intro.nextLine(); 
+                    File directorio = new File(dir);
+                    if(directorio.exists() && directorio.isDirectory()){
+                    guardarFactura(dir);
+                    guardado = true;
+                }
+                else{
+                    System.out.println("directorio incorrecto");
+                }
+                }while(guardado == false);
+                
+                break;
+            default:
+                System.out.println("Error");
+        }
+    }
+    
 
 }
