@@ -3,6 +3,7 @@
 //*)Asociar el animal con su dueño
 //*)Arreglar AeroBikes
 //*)toString de Mascota
+//Arreglar que cada nuevo intento se limpien las variables
 package main;
 /**
  *
@@ -27,21 +28,38 @@ public class IA_EVA {
             if (objeto instanceof Nomun) {
                 System.out.println(ejemplo.get(i).toString());
             }
+            if (objeto instanceof Pajaro) {
+                System.out.println(ejemplo.get(i).toString());
+            }
+            if (objeto instanceof Perro) {
+                System.out.println(ejemplo.get(i).toString());
+            }
+            if (objeto instanceof Gato) {
+                System.out.println(ejemplo.get(i).toString());
+            }
         }        
     }
     
     public static void main(String[] args) {
         boolean salida=false;
         do {
-            LectorTxt.lectorFiles();
+            boolean check_automatico = Config.comprobar_directorio(Text.directorio_files);
             System.out.println(Text.menu_seleccion_inicio);
-            String seleccion = Text.intro.next();
+            String seleccion = Text.intro.nextLine();
             
             switch (seleccion) {
-                case "1" -> IA_BOB.calculadorSeleccion();
-                case "2" -> IA_ALONSO.calculadorAutomatico();
-                case "3" -> salida=true;
-                default -> System.out.println(Text.error_seleccion);
+                case "1": IA_BOB.calculadorSeleccion();
+                               break;
+                case "2": if(check_automatico){
+                        IA_ALONSO.calculadorAutomatico();
+                    } else {System.out.println(Text.error_seleccion+" directorio no ajustado");}
+                    break;
+                case "3": Config.config();
+                    break;
+                case "4": salida=true;
+                    break;
+                default: System.out.println(Text.error_seleccion);
+                    break;
             }
         } while (salida!=true);
         

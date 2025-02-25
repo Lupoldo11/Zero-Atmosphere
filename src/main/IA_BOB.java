@@ -41,6 +41,7 @@ public class IA_BOB {
         int num_soldados = Text.intro.nextInt();
         System.out.println("¿Cuántos mineros quieres?");
         int num_mineros = Text.intro.nextInt();
+        Text.intro.nextLine();
         int total_personas= num_soldados + num_mineros;
         Persona.generadorPersona(total_personas,num_soldados); //las mascotas se generan aleatorias aquí
         

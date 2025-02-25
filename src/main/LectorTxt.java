@@ -13,9 +13,8 @@ public class LectorTxt {
     //Genera las personas y añade al array
     public static void lectorFiles (){
         try {
-            List<String> listFile= new ArrayList<>();
-            
             for (String file:Text.files){
+                List<String> listFile= new ArrayList<>();
                 List<String> lineas = Files.readAllLines(Paths.get(Text.directorio_files+file));
                 for (String linea : lineas) {
                     String[] linea_con_comas=linea.split(",");

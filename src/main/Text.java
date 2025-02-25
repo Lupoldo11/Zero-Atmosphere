@@ -7,14 +7,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Vector;
+import java.util.Properties;
 public class Text {
-    //Contenido String o textual
-    protected static String guiones="-----------------------------------------------";
-    protected static String separador="||||||||||||||||||||||||||||||||||||||||||||||||||||";
-    protected static String menu_seleccion_inicio="Lista de opciones: \n1) IA_Bob (Seleccionable) \n2) IA_Alonso (Automático) \n3) Salir";
+    //Contenido String o textual (es)
+    protected static String menu_seleccion_inicio="Lista de opciones: \n1) IA_Bob (Seleccionable) \n2) IA_Alonso (Automático) \n3) Ajustes \n4) Salir";
     protected static String error_seleccion="Opción no disponible";
     protected static String cierre_sesion="Cerrando sesión";
     
+    //String para funciones
+    protected static String guiones="-----------------------------------------------";
+    protected static String separador="||||||||||||||||||||||||||||||||||||||||||||||||||||";
     protected static String directorio_files="C:\\Users\\Lupoldo\\Desktop\\Desarrollo Muti\\Programación\\Archivos programación\\ZeroAtmosphere\\src\\documentacion\\";
     protected static String[] files=new String[]{"Nombres.txt","Apellidos.txt","MascotaN.txt","MascotaR.txt"};
     
