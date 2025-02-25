@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main;
-
 /**
  *
  * @author masar
@@ -14,13 +9,17 @@ public class Gato extends Mascota {
     protected String color;
     protected String pelo;
 
-    public Gato(String nombre, int edad, PropietarioMascota amo, String raza, String color, String pelo) {
-        super(nombre, edad, amo);
+    public Gato(String raza, String color, String pelo) {
+        super(edadGato()); //añadir metodo para calcular edad de un gato
         this.raza = raza;
         this.color = color;
         this.pelo = pelo;
     }
 
+    public static int edadGato(){
+        return (int) (Math.random() * 20) + 1;
+    }
+    
     public String getRaza() {
         return raza;
     }
@@ -65,7 +64,8 @@ public class Gato extends Mascota {
 
     @Override
     public String toString() {
-        return "Mascota: Gato cuyo nombre es " + nombre + " edad " + edad + " de raza " + raza + " color " + color + " tipo de pelo " + pelo + " amo:" + amo;
+        return "Gato cuyo nombre es " + nombre + " edad " + edad + " de raza "
+                + raza + " color " + color + " tipo de pelo " + pelo + " amo:" + 0+ " codigo de mascota: "+super.codigo;
     }
 
 }

@@ -8,8 +8,8 @@ public class Nave extends Vehiculo {
     private Laboratorio laboratorio;
     private TunelCiclonico tunelCiclonico;
 
-    public Nave(int numRampas, double potenciaKwMs, int numMotores, Laboratorio laboratorio, TunelCiclonico tunelCiclonico, int numPersonas, int maxPersonas, TurboJet turbojet, Codigo codigo, int capacidadCarburante, int gastoCarburante) {
-        super(numPersonas, maxPersonas, turbojet, codigo, capacidadCarburante, gastoCarburante);
+    public Nave(int numRampas, double potenciaKwMs, int numMotores, Laboratorio laboratorio, TunelCiclonico tunelCiclonico, int numPersonas, int maxPersonas, TurboJet turbojet, Codigo codigo) {
+        super(numPersonas, maxPersonas, turbojet);
         this.numRampas = numRampas;
         this.potenciaKwMs = potenciaKwMs;
         this.numMotores = numMotores;
@@ -55,11 +55,6 @@ public class Nave extends Vehiculo {
 
     public void setTunelCiclonico(TunelCiclonico tunelCiclonico) {
         this.tunelCiclonico = tunelCiclonico;
-    }
-
-    @Override
-    public String toString() {
-        return "Nave{" + "numRampas=" + numRampas + ", potenciaKwMs=" + potenciaKwMs + ", numMotores=" + numMotores + ", laboratorio=" + laboratorio + ", tunelCiclonico=" + tunelCiclonico + '}';
     }
 
 }

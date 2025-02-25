@@ -1,13 +1,13 @@
 package main;
 
 public class AeroBike extends Vehiculo {
-
-    private int velocidadMax;
+ private int velocidadMax;
     private String color;
     private boolean arrancado;
+    private static final int maxPersona=2;
 
-    public AeroBike(int velocidadMax, String color, boolean arrancado, int numPersonas, int maxPersonas, TurboJet turbojet, Codigo codigo, int capacidadCarburante, int gastoCarburante) {
-        super(numPersonas, maxPersonas, turbojet, codigo, capacidadCarburante, gastoCarburante);
+    public AeroBike(int velocidadMax, String color, boolean arrancado, int numPersonas, int maxPersonas, TurboJet turbojet) {
+        super(numPersonas, AeroBike.maxPersona, turbojet);
         this.velocidadMax = velocidadMax;
         this.color = color;
         this.arrancado = arrancado;
@@ -43,3 +43,5 @@ public class AeroBike extends Vehiculo {
     }
 
 }
+
+

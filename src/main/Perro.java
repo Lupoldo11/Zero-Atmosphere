@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main;
-
 /**
  *
  * @author masar
@@ -13,13 +8,17 @@ public class Perro extends Mascota{
     protected double peso;
     protected String size;
     
-    public Perro(String nombre, int edad, PropietarioMascota amo,String raza,double peso,String size){
-        super(nombre,edad,amo);
+    public Perro(String raza,String size){
+        super(edadPerro()); //añadir metodo para calcular edad de un perro
         this.raza=raza;
-        this.peso=peso;
+        this.peso= (int) (Math.random() * 110) + 2;
         this.size=size;
     }
 
+    public static int edadPerro(){
+        return (int) (Math.random() * 13) + 1;
+    }
+    
     public String getRaza() {
         return raza;
     }
@@ -64,7 +63,8 @@ public class Perro extends Mascota{
 
     @Override
     public String toString() {
-        return "Mascota: Perro cuyo nombre es " +nombre+" de raza " + raza + ", peso de " + peso + "kg, tamaño: " + size+ ". Propietario: "+amo;
+        return "Perro cuyo nombre es " +nombre+", de raza " + raza + ", pesa " + peso + "kgs, tamaño: " + size+ ". Propietario: "
+                + ""+0+" codigo de mascota: "+super.codigo;
     }
     
     

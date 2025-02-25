@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main;
-
 /**
  *
  * @author masar
@@ -13,11 +8,15 @@ public class Pajaro extends Mascota{
     protected String especie;
     protected boolean volador;
     
-    public Pajaro(String nombre, int edad, PropietarioMascota amo,String color,String especie,boolean volador){
-        super(nombre,edad,amo);
+    public Pajaro(String color,String especie,boolean volador){
+        super(edadPajaro()); //añadir metodo para calcular edad de un pajaro
         this.color=color;
         this.especie=especie;
         this.volador=volador;
+    }
+    
+    public static int edadPajaro(){
+        return (int) (Math.random() * 7) + 1;
     }
     
     @Override
@@ -44,7 +43,7 @@ public class Pajaro extends Mascota{
 
     @Override
     public String toString() {
-        return "Pajaro{" + "color=" + color + ", especie=" + especie + ", volador=" + volador + '}';
+        return "Pajaro " +nombre+ " edad "+edad+" amo "+0+" de color "+color+" su especie es "+especie+" con codigo de mascota "+super.codigo;
     }
     
 }
