@@ -1,4 +1,4 @@
-package main;
+package mascotas;
 /**
  *
  * @author masar

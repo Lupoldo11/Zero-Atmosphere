@@ -1,8 +1,12 @@
-package main;
+package personas;
 /**
  *
  * @author Lupoldo
  */
+
+import utils.Codigo;
+import utils.Text;
+
 public class Minero extends Persona {
     //Atributos
     //Constructor

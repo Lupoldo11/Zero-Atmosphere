@@ -1,8 +1,13 @@
-package main;
+package mascotas;
 /**
  *
  * @author masar
  */
+
+import utils.Codigo;
+import utils.Text;
+import personas.Persona;
+
 public abstract class Mascota {
     //atributos
     protected String nombre;

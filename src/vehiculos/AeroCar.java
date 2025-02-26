@@ -1,8 +1,11 @@
-package main;
-
+package vehiculos;
+/**
+ *
+ * @author Ana
+ */
 public class AeroCar extends Vehiculo {
 
- private int numMarchas;
+    private int numMarchas;
     private String modelo;
     private double estado_deposito;
     private static final int maxPersona=4;

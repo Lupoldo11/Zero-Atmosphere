@@ -1,8 +1,13 @@
-package main;
+package personas;
 /**
  *
  * @author Lupoldo
  */
+
+import utils.Codigo;
+import utils.Text;
+import mascotas.Mascota;
+
 public class Persona {
     //Atributos
     private String nombre;

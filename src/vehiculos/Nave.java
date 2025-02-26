@@ -1,4 +1,12 @@
-package main;
+package vehiculos;
+/**
+ *
+ * @author Ana
+ */
+
+import habitaciones.Laboratorio;
+import habitaciones.TunelCiclonico;
+import utils.Codigo;
 
 public class Nave extends Vehiculo {
 

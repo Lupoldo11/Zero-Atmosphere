@@ -1,8 +1,11 @@
-package main;
+package aliens;
 /**
  *
  * @author gasto
  */
+import utils.Codigo;
+import utils.Text;
+
 public abstract class Alien {
     //Atributos
     public String codigo_ref;

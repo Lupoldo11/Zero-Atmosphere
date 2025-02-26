@@ -1,5 +1,8 @@
-package main;
-
+package vehiculos;
+/**
+ *
+ * @author Ana
+ */
 public class TurboJet {
 
     private int potencia;
