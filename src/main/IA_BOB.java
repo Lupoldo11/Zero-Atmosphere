@@ -65,6 +65,6 @@ public class IA_BOB {
         //8) Coste Total Operación (formula ana)
         System.out.println(Text.guiones);
         System.out.println("Accion 8");
-        System.out.println("El coste total del operativo es de: " + Sumatorio.costeTotal(distancia));
+        System.out.println("El coste total del operativo es de: " + Sumatorio.costeTotal());
     }      
 }

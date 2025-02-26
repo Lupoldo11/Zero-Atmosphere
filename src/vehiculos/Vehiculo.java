@@ -12,7 +12,7 @@ public abstract class Vehiculo {
     protected int maxPersonas;
     protected TurboJet turbojet;
     protected String codigo;
-    protected int gastoCarburante=2;
+    public static int gastoCarburante=2;
 
     //Constructor
     public Vehiculo(int numPersonas, int maxPersonas, TurboJet turbojet) {
