@@ -38,8 +38,10 @@ public class IA_ALONSO {
         System.out.println("Accion 2");
         System.out.print("¿Cual es la distancia hacia la otra nave?");
         double distancia = (int) (Math.random() * 200) + 1;//Añadir ramdon de distancia
-        System.out.println("La distancia con la nave es de: "+distancia+" año/luz. \nPor tanto es: "+Vehiculo.metodoTransmision(distancia));
-        double dias_mision = (int) Math.floor(distancia*3);
+        System.out.println("La distancia con la nave es de: "+Text.distancia+" año/luz. \nPor tanto es: "+Vehiculo.metodoTransmision(Text.distancia));
+        
+        //Días
+        double dias_mision = (int) Math.floor(Text.distancia*3);
         System.out.println("La misión durará "+dias_mision+" días");
         
         //3)Lista soldados (nombres - toString) a intervenir (pedir a usuario)

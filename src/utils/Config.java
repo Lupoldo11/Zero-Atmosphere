@@ -16,7 +16,8 @@ public class Config {
             switch (seleccion){
                 case "1" -> change_directory();
                 case "2" -> System.out.println("idioma");//cambio de idioma
-                case "3" -> salida=true;
+                case "3" -> LectorTxt.menuFactura();
+                case "4" -> salida=true;
                 default -> System.out.println(Text.error_seleccion);
             }
         } while (salida!=true);

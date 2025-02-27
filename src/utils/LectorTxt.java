@@ -3,6 +3,8 @@ package utils;
  *
  * @author Lupoldo
  */
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -37,6 +39,47 @@ public class LectorTxt {
             case"MascotaN.txt"-> Text.fileMascotaN= listFile;
             case"MascotaR.txt"-> Text.fileMascotaR= listFile;
             default->System.out.println(Text.error_seleccion);
+        }
+    }
+    
+    public static void guardarFactura(String directorio){
+        try {
+            FileWriter imprimir = new FileWriter(directorio+"\\factura.txt"); // puedes añadir la ruta de archivo donde quieras que se guarde
+            imprimir.write(Sumatorio.imprimirFactura());
+            imprimir.close();
+            System.out.println("Factura guardada");
+        } catch (IOException e) {
+            System.out.println("Error al guardar la factura");
+            e.printStackTrace();
+        }
+    }
+    
+    public static void menuFactura() {
+        System.out.println("1.Ver factura en pantalla \n 2.Guardar factura");
+        String seleccion = Text.intro.nextLine();
+        
+        switch(seleccion){
+            case "1":
+                System.out.println(Sumatorio.imprimirFactura());
+                
+                break;
+            case "2":
+                boolean guardado = false;
+                do{
+                    System.out.println("Introduce el directorio donde guardar la factura");
+                    String dir = Text.intro.nextLine(); 
+                    File directorio = new File(dir);
+                    if(directorio.exists() && directorio.isDirectory()){
+                        guardarFactura(dir);
+                        guardado = true;
+                    }
+                    else{
+                        System.out.println("directorio incorrecto");
+                    }
+                }while(guardado == false);
+                break;
+            default:
+                System.out.println("Error");
         }
     }
 }

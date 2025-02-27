@@ -43,6 +43,11 @@ public class Text {
     //HashMap para asociacion mascota-dueño
     public static HashMap<String, String> mascota_dueño = new HashMap<>();
     
+    //Variables usados en varias class
+    public static int  num_soldados, num_mineros;
+    public static int motos,coches;
+    public static double distancia;
+    
     //LO GUARDO AQUí PORQUE NO SE DONDE PONERLO (Objeto Persona predefinidos)
     final Persona laura = new Persona("Laura","Lopez Gomez",20);
     final Persona carmen = new Persona("Carmen","Lopez Arias",59);
