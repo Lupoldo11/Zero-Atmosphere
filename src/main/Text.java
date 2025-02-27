@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Vector;
-import java.util.Properties;
 public class Text {
     //Contenido String o textual (es)
     protected static String menu_seleccion_inicio="Lista de opciones: \n1) IA_Bob (Seleccionable) \n2) IA_Alonso (Automático) \n3) Ajustes \n4) Salir";
@@ -17,7 +16,7 @@ public class Text {
     //String para funciones
     protected static String guiones="-----------------------------------------------";
     protected static String separador="||||||||||||||||||||||||||||||||||||||||||||||||||||";
-    protected static String directorio_files="C:\\Users\\Lupoldo\\Desktop\\Desarrollo Muti\\Programación\\Archivos programación\\ZeroAtmosphere\\src\\documentacion\\";
+    protected static String directorio_files="";
     protected static String[] files=new String[]{"Nombres.txt","Apellidos.txt","MascotaN.txt","MascotaR.txt"};
     
     //Herramientas de introducción de datos
@@ -37,6 +36,11 @@ public class Text {
     
     //HashMap para asociacion mascota-dueño
     public static HashMap<String, String> mascota_dueño = new HashMap<>();
+    
+    //Variables usados en varias class
+    public static int  num_soldados, num_mineros;
+    public static int motos,coches;
+    public static double distancia;
     
     //LO GUARDO AQUí PORQUE NO SE DONDE PONERLO (Objeto Persona predefinidos)
     final Persona laura = new Persona("Laura","Lopez Gomez",20);

@@ -30,10 +30,6 @@ public class AeroCar extends Vehiculo {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-    
-    public double calculaCarburante(double distancia) {
-        return Math.sqrt(distancia) * 12;
-    }
 
     @Override
     public String toString() {

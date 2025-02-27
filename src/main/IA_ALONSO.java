@@ -30,8 +30,8 @@ public class IA_ALONSO {
         System.out.println(Text.guiones);
         System.out.println("Accion 2");
         System.out.print("¿Cual es la distancia hacia la otra nave?");
-        double distancia = (int) (Math.random() * 200) + 1;//Añadir ramdon de distancia
-        System.out.println("La distancia con la nave es de: "+distancia+" año/luz. \nPor tanto es: "+Vehiculo.metodoTransmision(distancia));
+        Text.distancia = (int) (Math.random() * 200) + 1;//Añadir ramdon de distancia
+        System.out.println("La distancia con la nave es de: "+Text.distancia+" año/luz. \nPor tanto es: "+Vehiculo.metodoTransmision(Text.distancia));
         
         //3)Lista soldados (nombres - toString) a intervenir (pedir a usuario)
         //4)Lista mineros (nombres - toString) a intervenir (pedir a usuario)
@@ -50,6 +50,6 @@ public class IA_ALONSO {
         //8) Coste Total Operación (formula ana)
         System.out.println(Text.guiones);
         System.out.println("Accion 8");
-        System.out.println("El coste total del operativo es de: " + Sumatorio.costeTotal(distancia));
+        System.out.println("El coste total del operativo es de: " + Sumatorio.costeTotal());
     }
 }

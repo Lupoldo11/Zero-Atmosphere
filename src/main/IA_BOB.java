@@ -30,20 +30,20 @@ public class IA_BOB {
         System.out.println(Text.guiones);
         System.out.println("Accion 2");
         System.out.println("¿Cual es la distancia hacia la otra nave?");
-        double distancia = Text.intro.nextDouble();
+        Text.distancia = Text.intro.nextDouble();
         Text.intro.nextLine();
-        System.out.println("La distancia con la nave es de: "+distancia+" año/luz. \nPor tanto es: "+Vehiculo.metodoTransmision(distancia));
+        System.out.println("La distancia con la nave es de: "+Text.distancia+" año/luz. \nPor tanto es: "+Vehiculo.metodoTransmision(Text.distancia));
         
         //4)Lista mineros y soldados (nombres - toString) a intervenir (pedir a usuario)
         System.out.println(Text.guiones);
         System.out.println("Accion 3 y 4");
         System.out.println("¿Cuántos soldados quieres?");
-        int num_soldados = Text.intro.nextInt();
+        Text.num_soldados= Text.intro.nextInt();
         System.out.println("¿Cuántos mineros quieres?");
-        int num_mineros = Text.intro.nextInt();
+        Text.num_mineros = Text.intro.nextInt();
         Text.intro.nextLine();
-        int total_personas= num_soldados + num_mineros;
-        Persona.generadorPersona(total_personas,num_soldados); //las mascotas se generan aleatorias aquí
+        int total_personas= Text.num_soldados + Text.num_mineros;
+        Persona.generadorPersona(total_personas,Text.num_soldados); //las mascotas se generan aleatorias aquí
         
         //Muestra todos los tripulantes de la nave
         System.out.println(Text.guiones);
@@ -58,6 +58,6 @@ public class IA_BOB {
         //8) Coste Total Operación (formula ana)
         System.out.println(Text.guiones);
         System.out.println("Accion 8");
-        System.out.println("El coste total del operativo es de: " + Sumatorio.costeTotal(distancia));
+        System.out.println("El coste total del operativo es de: " + Sumatorio.costeTotal());
     }      
 }

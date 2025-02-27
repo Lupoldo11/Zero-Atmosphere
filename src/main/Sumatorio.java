@@ -31,8 +31,36 @@ public class Sumatorio {
         return costeVehiculos;
     }
 
-    public static int costeTotal(double distancia) {
-        return sumarCostePersonas() + sumarCosteAliens() + sumarCosteVehiculos(distancia);
+    public static int costeTotal() {
+        return sumarCostePersonas() + sumarCosteAliens() + sumarCosteVehiculos(Text.distancia);
     }
+    
+     public static String imprimirFactura() {
+        int costeMineros = Text.num_mineros * 20;
+        int costeSoldados = Text.num_soldados * 22;
+        int costeCars = Text.coches * AeroCar.gastoCarburante; 
+        int costeBikes = Text.motos * AeroBike.gastoCarburante; 
 
+        String factura = "*********************************************************\n"
+                + "*********************************************************\n"
+                + "COSTE DE LA MISION\n"
+                + "*********************************************************\n"
+                + "Personas             Coste/Dia       Total\n"
+                + "_____________________________________________________________\n"
+                + "  Minero             20yurs       " + costeMineros + " yurs\n"
+                + "  Soldado            22yurs       " + costeSoldados + " yurs\n"
+                + "*********************************************************\n"
+                + "Vehiculos                            Total\n"
+                + "____________________________________________________________\n"
+                + "  AeroCar                          " + costeCars + " yurs\n"
+                + "  AeroBike                         " + costeBikes + " yurs\n"
+                + "*********************************************************\n"
+                + "Penalizacion por alien  4yurs/dia  " + sumarCosteAliens() + " yurs\n"
+                + "*********************************************************\n"
+                + "*********************************************************\n"
+                + "TOTAL: " + costeTotal() + "\n"
+                + "*********************************************************";
+        return factura;   
+    }
+     
 }

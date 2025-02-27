@@ -6,7 +6,7 @@ public abstract class Vehiculo {
     protected int maxPersonas;
     protected TurboJet turbojet;
     protected String codigo;
-    protected int gastoCarburante=2;
+    protected static int gastoCarburante=12;
 
     //Constructor
     public Vehiculo(int numPersonas, int maxPersonas, TurboJet turbojet) {
@@ -45,7 +45,7 @@ public abstract class Vehiculo {
         this.maxPersonas = maxPersonas;
     }
     
-    public double calculaCarburante(double distancia) {
+    public static double calculaCarburante(double distancia) {
         return Math.sqrt(distancia) * gastoCarburante;
     }
 

@@ -11,12 +11,13 @@ public class Config {
     public static void config(){
         boolean salida=false;
         do {
-            System.out.println("1) Cambiar directorio \n2) Cambiar idioma \n3) Salir");
+            System.out.println("1) Cambiar directorio \n2) Cambiar idioma \n3) Facturas \n4) Salir");
             String seleccion = Text.intro.nextLine();
             switch (seleccion){
                 case "1" -> change_directory();
                 case "2" -> System.out.println("idioma");//cambio de idioma
-                case "3" -> salida=true;
+                case "3" -> LectorTxt.menuFactura();
+                case "4" -> salida=true;
                 default -> System.out.println(Text.error_seleccion);
             }
         } while (salida!=true);

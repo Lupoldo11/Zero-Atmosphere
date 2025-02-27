@@ -1,9 +1,9 @@
 //*) Genera los 4 principales tripulantes (Carmen, Laura, Lopez, federico) , la nave principal, la nave objetivo
 //*)Arreglar los toString de los animales (perro,gato,pajaro) - lo del amo
 //*)Asociar el animal con su dueño
-//*)Arreglar AeroBikes
 //*)toString de Mascota
 //Arreglar que cada nuevo intento se limpien las variables
+//Añadir días para la mision (añadir a costeTotal())
 package main;
 /**
  *
@@ -43,13 +43,15 @@ public class IA_EVA {
     public static void main(String[] args) {
         boolean salida=false;
         do {
-            boolean check_automatico = Config.comprobar_directorio(Text.directorio_files);
+            boolean check_automatico = false;
             System.out.println(Text.menu_seleccion_inicio);
             String seleccion = Text.intro.nextLine();
             
             switch (seleccion) {
-                case "1": IA_BOB.calculadorSeleccion();
-                               break;
+                case "1": if(check_automatico){
+                        IA_BOB.calculadorSeleccion();
+                    } else {System.out.println(Text.error_seleccion+" directorio no ajustado");}
+                    break;
                 case "2": if(check_automatico){
                         IA_ALONSO.calculadorAutomatico();
                     } else {System.out.println(Text.error_seleccion+" directorio no ajustado");}
