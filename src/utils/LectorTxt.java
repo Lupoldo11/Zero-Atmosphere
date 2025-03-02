@@ -55,9 +55,9 @@ public class LectorTxt {
     }
     
     public static void menuFactura() {
-        System.out.println("1.Ver factura en pantalla \n 2.Guardar factura");
+        System.out.println("1.Ver factura en pantalla \n 2.Guardar factura\n 3.Salir");
         String seleccion = Text.intro.nextLine();
-        
+        boolean salir = false;
         switch(seleccion){
             case "1":
                 System.out.println(Sumatorio.imprimirFactura());
@@ -77,6 +77,10 @@ public class LectorTxt {
                         System.out.println("directorio incorrecto");
                     }
                 }while(guardado == false);
+                break;
+            case "3":
+                salir = true;
+                guardado = true;
                 break;
             default:
                 System.out.println("Error");

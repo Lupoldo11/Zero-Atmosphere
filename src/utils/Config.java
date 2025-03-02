@@ -6,16 +6,17 @@ package utils;
  * @author Lupoldo
  */
 import java.io.File;
+
 public class Config {
     //Menu Config
     public static void config(){
         boolean salida=false;
         do {
-            System.out.println("1) Cambiar directorio \n2) Cambiar idioma \n3) Salir");
+            System.out.println(Text.menu_ajustes);
             String seleccion = Text.intro.nextLine();
             switch (seleccion){
                 case "1" -> change_directory();
-                case "2" -> System.out.println("idioma");//cambio de idioma
+                case "2" -> cambiar_idioma();
                 case "3" -> LectorTxt.menuFactura();
                 case "4" -> salida=true;
                 default -> System.out.println(Text.error_seleccion);
@@ -67,5 +68,33 @@ public class Config {
                 System.out.println("En este directorio no se encuentran todos archivos necesarios");
                 return false;
             }
+    }
+    
+    //Menu cambio de idioma
+    public static void cambiar_idioma() {
+        Text.cargarProperties();
+        System.out.println("Elige un idioma:\n 1.Espanol\n 2.English");
+        String seleccion = Text.intro.nextLine();
+        switch (seleccion) {
+            case "1" -> {
+                System.out.println("Idioma cambiado a Espanol");
+
+                Text.menu_seleccion_inicio = Text.propsEsp.getProperty("menu_seleccion_inicio");
+                Text.error_seleccion = Text.propsEsp.getProperty("error_seleccion");
+                Text.cierre_sesion = Text.propsEsp.getProperty("cierre_sesion");
+                Text.menu_ajustes = Text.propsEsp.getProperty("menu_ajustes");
+                
+            }
+            case "2" -> {
+                System.out.println("Language changed to English");
+                Text.menu_seleccion_inicio = Text.propsEng.getProperty("menu_seleccion_inicio");
+                Text.error_seleccion = Text.propsEng.getProperty("error_seleccion");
+                Text.cierre_sesion = Text.propsEng.getProperty("cierre_sesion");
+                Text.menu_ajustes = Text.propsEng.getProperty("menu_ajustes");
+                
+                System.out.println(Text.menu_seleccion_inicio);
+            }
+            default -> System.out.println(Text.error_seleccion);
+        }
     }
 }

@@ -70,8 +70,6 @@ public class IA_EVA {
                     break;
             }
         } while (salida!=true);
-        
-        System.out.println(Text.cierre_sesion);
     }
     
 }
