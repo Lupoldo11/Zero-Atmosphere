@@ -18,7 +18,7 @@ public class IA_ALONSO {
         
         //1)Num aliens (aleatorio)
         System.out.println(Text.guiones);
-        System.out.println("Accion 1");
+        System.out.println(Text.accion+" 1");
         int contador_Raiser, contador_Nomun, total_alien;
         
         contador_Raiser= (int) (Math.random() * 200) + 1; //Gaston funcion random (debe de modular)
@@ -30,24 +30,24 @@ public class IA_ALONSO {
         
         //6)Lista de aliens por tipos encontrados (toString de funciones de arriba)
         System.out.println(Text.guiones);
-        System.out.println("Accion 6");
-        System.out.println("Listado de Alien: "+Text.listAlien.size() +"\nNúmero de Nomun: "+contador_Nomun + "\nNúmero de Raiser: "+contador_Raiser);
+        System.out.println(Text.accion+" 6");
+        System.out.println(Text.listado_de+" Alien: "+Text.listAlien.size() + Text.numero_de+"\n Nomun: "+contador_Nomun + Text.numero_de+"\nRaiser: "+contador_Raiser);
         
         //2)Distancia nave
         System.out.println(Text.guiones);
-        System.out.println("Accion 2");
-        System.out.print("¿Cual es la distancia hacia la otra nave?");
+        System.out.println(Text.accion+" 2");
+        System.out.print(Text.pregunta_distancia);
         double distancia = (int) (Math.random() * 200) + 1;//Añadir ramdon de distancia
-        System.out.println("La distancia con la nave es de: "+Text.distancia+" año/luz. \nPor tanto es: "+Vehiculo.metodoTransmision(Text.distancia));
+        System.out.println(Text.respuesta_distancia+Text.distancia+Text.anios_luz+Vehiculo.metodoTransmision(Text.distancia));
         
         //Días
         double dias_mision = (int) Math.floor(Text.distancia*3);
-        System.out.println("La misión durará "+dias_mision+" días");
+        System.out.println(Text.duracion_mision+dias_mision+Text.dias);
         
         //3)Lista soldados (nombres - toString) a intervenir (pedir a usuario)
         //4)Lista mineros (nombres - toString) a intervenir (pedir a usuario)
         System.out.println(Text.guiones);
-        System.out.println("Accion 3 y 4");
+        System.out.println(Text.accion+" 3 y 4");
         int num_soldados = total_alien*2;
         int num_mineros = total_alien;
         int total_personas= num_soldados + num_mineros;
@@ -56,11 +56,11 @@ public class IA_ALONSO {
         
         //7)Vehiculos utilizados  (formula antia de empaquetamiento)
         System.out.println(Text.guiones);
-        System.out.println("Accion 7");
+        System.out.println(Text.accion+" 7");
         
         //8) Coste Total Operación (formula ana)
         System.out.println(Text.guiones);
-        System.out.println("Accion 8");
-        System.out.println("El coste total del operativo es de: " + Sumatorio.costeTotal());
+        System.out.println(Text.accion+" 8");
+        System.out.println(Text.coste_mision+ Sumatorio.costeTotal());
     }
 }

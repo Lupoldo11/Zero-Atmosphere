@@ -23,9 +23,29 @@ public class Text {
     public static String error_seleccion = "Opción no disponible";
     public static String cierre_sesion = "";
     public static String menu_ajustes = "1) Cambiar directorio \n2) Cambiar idioma \n3) Salir"; 
-
-    //Cargar contenido String español
-    static Properties propsEsp = new Properties(); //Crear properties
+    public static String accion = "Accion";
+    public static String listado_de = "Listado de";
+    public static String numero_de = "Numero de";
+    public static String pregunta_distancia = "¿Cual es la distancia hacia la otra nave?";
+    public static String respuesta_distancia = "La distancia con la nave es de: ";
+    public static String anios_luz = " año/luz. \nPor tanto es: ";
+    public static String duracion_mision = "La misión durará ";
+    public static String dias = " días";
+    public static String coste_mision = "El coste total del operativo es de: " ;
+    public static String intro_directorio = "Introduce directorio: ";
+    public static String error_cambio_dir = "No se ha podido cambiar";
+    public static String dir_no_existe = "Esta ruta no existe";
+    public static String dir_enlazado = "Directorio enlazado y con el contenido requerido";
+    public static String dir_no_archivos = "En este directorio no se encuentran todos archivos necesarios";
+    public static String dir_no_ajustado = " directorio no ajustado";
+    public static String menu_factura = "1.Ver factura en pantalla \n 2.Guardar factura\n 3.Salir";
+    
+    
+ 
+    //Idiomas
+    //Crear y cargar properties
+    static Properties propsEng = new Properties(); //Crear propertie
+    static Properties propsEsp = new Properties(); 
     
     public static void cargarProperties(){
         try (InputStream urlPropsEsp = new FileInputStream("src/utils/espanol.properties")) {
@@ -43,25 +63,41 @@ public class Text {
             System.out.println("Error al cargar properties");
         }
     }
+    
+    //Menu cambio de idioma
+    public static void cambiar_idioma() {
+        cargarProperties();
+        System.out.println("Elige un idioma:\n 1.Espanol\n 2.English");
+        String seleccion = intro.nextLine();
+        switch (seleccion) {
+            case "1" -> {
+                System.out.println("Idioma cambiado a Espanol");
 
-    public static void cargarEspanol() {
-        System.out.println("Idioma cambiado a Espanol");
-        
-        menu_seleccion_inicio = propsEsp.getProperty("menu_seleccion_inicio");
-        error_seleccion = propsEsp.getProperty("error_seleccion");
-        cierre_sesion = propsEsp.getProperty("cierre_sesion");
-        menu_ajustes = propsEsp.getProperty("menu_ajustes");
-    }
-    //Cargar contenido String ingles
-    static Properties propsEng = new Properties(); //Crear properties
-
-    public static void cargarEnglish() {
-
-        System.out.println("Language changed to English");
-        menu_seleccion_inicio = propsEng.getProperty("menu_seleccion_inicio");
-        error_seleccion = propsEng.getProperty("error_seleccion");
-        cierre_sesion = propsEng.getProperty("cierre_sesion");
-        menu_ajustes = propsEng.getProperty("menu_ajustes");
+                menu_seleccion_inicio = propsEsp.getProperty("menu_seleccion_inicio");
+                error_seleccion = propsEsp.getProperty("error_seleccion");
+                cierre_sesion = propsEsp.getProperty("cierre_sesion");
+                menu_ajustes = propsEsp.getProperty("menu_ajustes");
+                
+            }
+            case "2" -> {
+                System.out.println("Language changed to English");
+                menu_seleccion_inicio = propsEng.getProperty("menu_seleccion_inicio");
+                error_seleccion = propsEng.getProperty("error_seleccion");
+                cierre_sesion = propsEng.getProperty("cierre_sesion");
+                menu_ajustes = propsEng.getProperty("menu_ajustes");
+                intro_directorio = propsEng.getProperty("intro_directorio");
+                error_cambio_dir = propsEng.getProperty("error_cambio_dir");
+                dir_no_existe = propsEng.getProperty("dir_no_existe");
+                dir_enlazado = propsEng.getProperty("dir_enlazado");
+                dir_no_archivos = propsEng.getProperty("dir_no_archivos");
+                dir_no_ajustado = propsEng.getProperty("dir_no_ajustado");
+                menu_factura = propsEng.getProperty("menu_factura");
+                
+                
+                System.out.println(menu_seleccion_inicio);
+            }
+            default -> System.out.println(error_seleccion);
+        }
     }
     
     //String para funciones

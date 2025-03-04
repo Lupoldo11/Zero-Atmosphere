@@ -41,6 +41,10 @@ public class IA_BOB {
         Text.intro.nextLine();
         System.out.println("La distancia con la nave es de: "+Text.distancia+" año/luz. \nPor tanto es: "+Vehiculo.metodoTransmision(Text.distancia));
         
+        //Días
+        double dias_mision = (int) Math.floor(Text.distancia*3);
+        System.out.println(Text.duracion_mision+dias_mision+Text.dias);
+        
         //4)Lista mineros y soldados (nombres - toString) a intervenir (pedir a usuario)
         System.out.println(Text.guiones);
         System.out.println("Accion 3 y 4");
