@@ -56,11 +56,11 @@ public class IA_EVA {
             switch (seleccion) {
                 case "1": if(check_automatico){
                         IA_BOB.calculadorSeleccion();
-                    } else {System.out.println(Text.error_seleccion+" directorio no ajustado");}
+                    } else {System.out.println(Text.error_seleccion+Text.dir_no_ajustado);}
                                break;
                 case "2": if(check_automatico){
                         IA_ALONSO.calculadorAutomatico();
-                    } else {System.out.println(Text.error_seleccion+" directorio no ajustado");}
+                    } else {System.out.println(Text.error_seleccion+Text.dir_no_ajustado);}
                     break;
                 case "3": Config.config();
                     break;
@@ -70,8 +70,6 @@ public class IA_EVA {
                     break;
             }
         } while (salida!=true);
-        
-        System.out.println(Text.cierre_sesion);
     }
     
 }

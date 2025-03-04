@@ -55,9 +55,9 @@ public class LectorTxt {
     }
     
     public static void menuFactura() {
-        System.out.println("1.Ver factura en pantalla \n 2.Guardar factura");
+        System.out.println(Text.menu_factura);
         String seleccion = Text.intro.nextLine();
-        
+        boolean salir = false;
         switch(seleccion){
             case "1":
                 System.out.println(Sumatorio.imprimirFactura());
@@ -66,7 +66,7 @@ public class LectorTxt {
             case "2":
                 boolean guardado = false;
                 do{
-                    System.out.println("Introduce el directorio donde guardar la factura");
+                    System.out.println(Text.intro_directorio);
                     String dir = Text.intro.nextLine(); 
                     File directorio = new File(dir);
                     if(directorio.exists() && directorio.isDirectory()){
@@ -74,9 +74,13 @@ public class LectorTxt {
                         guardado = true;
                     }
                     else{
-                        System.out.println("directorio incorrecto");
+                        System.out.println(Text.dir_no_existe);
                     }
                 }while(guardado == false);
+                break;
+            case "3":
+                salir = true;
+                guardado = true;
                 break;
             default:
                 System.out.println("Error");

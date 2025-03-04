@@ -6,16 +6,17 @@ package utils;
  * @author Lupoldo
  */
 import java.io.File;
+
 public class Config {
     //Menu Config
     public static void config(){
         boolean salida=false;
         do {
-            System.out.println("1) Cambiar directorio \n2) Cambiar idioma \n3) Salir");
+            System.out.println(Text.menu_ajustes);
             String seleccion = Text.intro.nextLine();
             switch (seleccion){
                 case "1" -> change_directory();
-                case "2" -> System.out.println("idioma");//cambio de idioma
+                case "2" -> Text.cambiar_idioma();
                 case "3" -> LectorTxt.menuFactura();
                 case "4" -> salida=true;
                 default -> System.out.println(Text.error_seleccion);
@@ -25,13 +26,13 @@ public class Config {
     
     //Cambiar directorio
     public static void change_directory(){
-        System.out.print("Introduce directorio: ");
+        System.out.print(Text.intro_directorio);
         String new_directorio= Text.intro.nextLine();
         boolean cheks= comprobar_directorio(new_directorio);
         if (cheks){
             Text.directorio_files=new_directorio;
         } else {
-            System.out.println("No se ha podido cambiar");
+            System.out.println(Text.error_cambio_dir);
         }
     }
     
@@ -43,7 +44,7 @@ public class Config {
             String[] listFiles = directorio.list();
             return comprobar_archivos(listFiles);
         } else {
-            System.out.println("Esta ruta no existe");
+            System.out.println(Text.dir_no_existe);
             return false;
         }
     }
@@ -61,11 +62,13 @@ public class Config {
         }
         if (checks[0]==true && checks[1]==true && checks[2]==true && checks[3]==true){
                 LectorTxt.lectorFiles();
-                System.out.println("Directorio enlazado y con el contenido requerido");
+                System.out.println(Text.dir_enlazado);
                 return true;
             } else {
-                System.out.println("En este directorio no se encuentran todos archivos necesarios");
+                System.out.println(Text.dir_no_archivos);
                 return false;
             }
     }
+    
+    
 }
