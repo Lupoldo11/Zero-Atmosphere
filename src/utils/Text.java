@@ -64,6 +64,21 @@ public class Text {
         }
     }
     
+    //Seleccionar properties
+    public static void seleccion_properties(Properties props){
+        menu_seleccion_inicio = props.getProperty("menu_seleccion_inicio");
+        error_seleccion = props.getProperty("error_seleccion");
+        cierre_sesion = props.getProperty("cierre_sesion");
+        menu_ajustes = props.getProperty("menu_ajustes");
+        intro_directorio = props.getProperty("intro_directorio");
+        error_cambio_dir = props.getProperty("error_cambio_dir");
+        dir_no_existe = props.getProperty("dir_no_existe");
+        dir_enlazado = props.getProperty("dir_enlazado");
+        dir_no_archivos = props.getProperty("dir_no_archivos");
+        dir_no_ajustado = props.getProperty("dir_no_ajustado");
+        menu_factura = props.getProperty("menu_factura");
+    }
+    
     //Menu cambio de idioma
     public static void cambiar_idioma() {
         cargarProperties();
@@ -72,29 +87,12 @@ public class Text {
         switch (seleccion) {
             case "1" -> {
                 System.out.println("Idioma cambiado a Espanol");
+                seleccion_properties(propsEsp);
 
-                menu_seleccion_inicio = propsEsp.getProperty("menu_seleccion_inicio");
-                error_seleccion = propsEsp.getProperty("error_seleccion");
-                cierre_sesion = propsEsp.getProperty("cierre_sesion");
-                menu_ajustes = propsEsp.getProperty("menu_ajustes");
-                
             }
             case "2" -> {
                 System.out.println("Language changed to English");
-                menu_seleccion_inicio = propsEng.getProperty("menu_seleccion_inicio");
-                error_seleccion = propsEng.getProperty("error_seleccion");
-                cierre_sesion = propsEng.getProperty("cierre_sesion");
-                menu_ajustes = propsEng.getProperty("menu_ajustes");
-                intro_directorio = propsEng.getProperty("intro_directorio");
-                error_cambio_dir = propsEng.getProperty("error_cambio_dir");
-                dir_no_existe = propsEng.getProperty("dir_no_existe");
-                dir_enlazado = propsEng.getProperty("dir_enlazado");
-                dir_no_archivos = propsEng.getProperty("dir_no_archivos");
-                dir_no_ajustado = propsEng.getProperty("dir_no_ajustado");
-                menu_factura = propsEng.getProperty("menu_factura");
-                
-                
-                System.out.println(menu_seleccion_inicio);
+                seleccion_properties(propsEng);
             }
             default -> System.out.println(error_seleccion);
         }
