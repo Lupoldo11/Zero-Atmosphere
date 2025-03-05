@@ -9,35 +9,37 @@ public class TurboJet {
     private int gastoCarburante;
     private String codigo;
 
-    public TurboJet(int potencia, int gastoCarburante, String codigo) {
-        this.potencia = potencia;
-        this.gastoCarburante = gastoCarburante;
-        this.codigo = codigo;
+    public TurboJet(boolean moto) {
+        this.potencia=100;
+        if (moto){
+            this.gastoCarburante=6;
+        } else {
+            this.gastoCarburante=12;
+        }
+        this.codigo = utils.Codigo.generarTurboJet();
     }
 
     public int getPotencia() {
         return potencia;
     }
 
-    public void setPotencia(int potencia) {
-        this.potencia = potencia;
-    }
-
     public int getGastoCarburante() {
         return gastoCarburante;
-    }
-
-    public void setGastoCarburante(int gastoCarburante) {
-        this.gastoCarburante = gastoCarburante;
     }
 
     public String getCodigo() {
         return codigo;
     }
 
+    //ARREGLAR
     @Override
     public String toString() {
         return "TurboJet{" + "potencia=" + potencia + ", gastoCarburante=" + gastoCarburante + ", codigo=" + codigo + '}';
     }
 
+    //Metodo static para generarTurboJets
+    public static TurboJet creadorMotor (boolean moto){
+        TurboJet ejemplo = new TurboJet(moto);
+        return ejemplo;
+    }
 }

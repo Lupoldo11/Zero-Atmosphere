@@ -65,6 +65,7 @@ public class IA_BOB {
         //7)Vehiculos utilizados  (formula antia de empaquetamiento)
         System.out.println(Text.guiones);
         System.out.println("Accion 7");
+        utils.AsignacionVehiculo.selectorVehiculos(Text.listPersona.size(), Text.listPersona); //ARREGLAR
         
         //8) Coste Total Operación (formula ana)
         System.out.println(Text.guiones);

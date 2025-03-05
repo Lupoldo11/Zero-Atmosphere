@@ -3,34 +3,21 @@ package vehiculos;
  *
  * @author Ana
  */
-
 import utils.Codigo;
 
 public abstract class Vehiculo {
     //Atributo
-    protected int numPersonas;
-    protected int maxPersonas;
     protected TurboJet turbojet;
     protected String codigo;
     public static int gastoCarburante=12;
 
     //Constructor
-    public Vehiculo(int numPersonas, int maxPersonas, TurboJet turbojet) {
-        this.numPersonas = numPersonas;
-        this.maxPersonas = maxPersonas;
+    public Vehiculo(TurboJet turbojet) {
         this.turbojet = turbojet;
-        this.codigo = Codigo.generarAerocar();
+        this.codigo = Codigo.generarVehiculo();
     }
 
     //Getter y Setter
-    public int getNumPersonas() {
-        return numPersonas;
-    }
-
-    public void setNumPersonas(int numPersonas) {
-        this.numPersonas = numPersonas;
-    }
-
     public TurboJet getTurbojet() {
         return turbojet;
     }
@@ -41,14 +28,6 @@ public abstract class Vehiculo {
 
     public String getCodigo() {
         return codigo;
-    }
-
-    public int getMaxPersonas() {
-        return maxPersonas;
-    }
-
-    public void setMaxPersonas(int maxPersonas) {
-        this.maxPersonas = maxPersonas;
     }
     
     public double calculaCarburante(double distancia) {
@@ -67,7 +46,7 @@ public abstract class Vehiculo {
     //Metodo toString
     @Override
     public String toString() {
-        return "Vehiculo{" + "numPersonas=" + numPersonas + ", maxPersonas=" + maxPersonas + ", turbojet=" + turbojet + ", codigo=" + codigo + '}';
+        return "Vehiculo{" + " turbojet=" + turbojet + ", codigo=" + codigo + '}';
     }
 
 }
