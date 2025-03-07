@@ -22,9 +22,15 @@ public class TurboJet {
     public int getPotencia() {
         return potencia;
     }
+    private void potenciaNave(){
+        this.potencia=1000;
+    }
 
     public int getGastoCarburante() {
         return gastoCarburante;
+    }
+    public void gastoNave(){
+        this.gastoCarburante=60;
     }
 
     public String getCodigo() {
@@ -41,5 +47,12 @@ public class TurboJet {
     public static TurboJet creadorMotor (boolean moto){
         TurboJet ejemplo = new TurboJet(moto);
         return ejemplo;
+    }
+    
+    public static TurboJet motorNave(){
+        TurboJet nave = new TurboJet(false);
+        nave.potenciaNave();
+        nave.gastoNave();
+        return nave;
     }
 }

@@ -4,6 +4,7 @@ package vehiculos;
  * @author Ana
  */
 import personas.Persona;
+import utils.Text;
 public class AeroBike extends Vehiculo {
 
     private int velocidadMax;
@@ -54,7 +55,11 @@ public class AeroBike extends Vehiculo {
     //ARREGLAR
     @Override
     public String toString() {
-        return "AeroBike{" + "velocidad Maxima: " + velocidadMax + ", color: " + color + ", arrancado: " + arrancado + '}';
+        String texto=Text.guiones +"\nAeroBike"+this.codigo+", Color: "+this.color +
+                "\nTripulantes: "+
+                "\n"+this.personas[0].getNombre() +" "+ this.personas[0].getApellidos()+
+                "\n"+this.personas[1].getNombre() +" "+ this.personas[1].getApellidos();
+        return texto;
     }
 
 }

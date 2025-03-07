@@ -4,6 +4,7 @@ package vehiculos;
  * @author Ana
  */
 import personas.Persona;
+import utils.Text;
 public class AeroCar extends Vehiculo {
 
     private int numMarchas;
@@ -52,7 +53,13 @@ public class AeroCar extends Vehiculo {
     //ARREGLAR
     @Override
     public String toString() {
-        return "AeroCar{" + "Numero de Marchas=" + numMarchas + ", Modelo=" + modelo + ", Capacidad Carburante=" + capacidadCarburante + '}';
+        String texto=Text.guiones +"\nAeroCar "+this.codigo+", Marca: "+this.modelo +
+                "\nTripulantes: "+
+                "\n"+this.personas[0].getNombre() +" "+ this.personas[0].getApellidos()+
+                "\n"+this.personas[1].getNombre() +" "+ this.personas[1].getApellidos()+
+                "\n"+this.personas[2].getNombre() +" "+ this.personas[2].getApellidos()+
+                "\n"+this.personas[3].getNombre() +" "+ this.personas[3].getApellidos();
+        return texto;
     }
 
 }
