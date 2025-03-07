@@ -1,4 +1,7 @@
 package vehiculos;
+
+import utils.Text;
+
 /**
  *
  * @author Ana
@@ -40,7 +43,7 @@ public class TurboJet {
     //ARREGLAR
     @Override
     public String toString() {
-        return "TurboJet{" + "potencia=" + potencia + ", gastoCarburante=" + gastoCarburante + ", codigo=" + codigo + '}';
+        return Text.turbojet + Text.potencia + potencia + Text.str_gasto_carburante + gastoCarburante + Text.str_codigo + codigo + '}';
     }
 
     //Metodo static para generarTurboJets

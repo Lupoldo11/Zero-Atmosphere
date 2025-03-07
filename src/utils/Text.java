@@ -117,6 +117,26 @@ public class Text {
     public static String coste_aliens = "Penalizacion por alien  4yurs/dia  ";
     public static String fac_guardada = "Factura guardada";
 
+    // Vehiculos
+    public static String arranca = "Esta arrancado";
+    public static String apagado = "Esta apagado";
+    public static String bike = "\nAeroBike";
+    public static String tripulantes = "\nTripulantes: ";
+    public static String deposito_lleno = "Deposito lleno";
+    public static String demasiada_gasolina = "La gasolina supera a la cantidad máxima \nDepósito Máximo: ";
+    public static String str_estado_deposito = "\nDepósito del vehículo: ";
+    public static String gasolina_falta = "\nGasolina que falta: ";
+    public static String car = "\nAeroCar ";
+    public static String marca = ", Marca: ";
+    public static String turbojet = "TurboJet{";
+    public static String potencia = "potencia=";
+    public static String str_gasto_carburante = ", gastoCarburante=";
+    public static String str_codigo = ", codigo=";
+    public static String economico = "economico";
+    public static String estelar = "estelar";
+    public static String vehiculo_tj = "Vehiculo{" + " turbojet=";
+    
+    
     //String para funciones
     public static String guiones = "-----------------------------------------------";
     public static String separador = "||||||||||||||||||||||||||||||||||||||||||||||||||||";

@@ -45,18 +45,18 @@ public class AeroBike extends Vehiculo {
     }
     public void arrancar(){
         if (arrancado){
-            System.out.println("Esta arrancado");
+            System.out.println(Text.arranca);
         }
         else {
-            System.out.println("Esta apagado");
+            System.out.println(Text.apagado);
         }
     }
 
     //ARREGLAR
     @Override
     public String toString() {
-        String texto=Text.guiones +"\nAeroBike"+this.codigo+", Color: "+this.color +
-                "\nTripulantes: "+
+        String texto=Text.guiones +Text.bike+this.codigo+Text.str_color+this.color +
+                Text.tripulantes +
                 "\n"+this.personas[0].getNombre() +" "+ this.personas[0].getApellidos()+
                 "\n"+this.personas[1].getNombre() +" "+ this.personas[1].getApellidos();
         return texto;

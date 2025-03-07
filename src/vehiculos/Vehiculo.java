@@ -4,6 +4,7 @@ package vehiculos;
  * @author Ana
  */
 import utils.Codigo;
+import utils.Text;
 
 public abstract class Vehiculo {
     //Atributo
@@ -37,16 +38,16 @@ public abstract class Vehiculo {
     //Metodo de Economia de distancia
     public static String metodoTransmision(double distancia) {
         if (distancia < 1) {
-            return "economico";
+            return Text.economico;
         } else {
-            return "estelar";
+            return Text.estelar;
         }
     }
         
     //Metodo toString
     @Override
     public String toString() {
-        return "Vehiculo{" + " turbojet=" + turbojet + ", codigo=" + codigo + '}';
+        return Text.vehiculo_tj + turbojet + Text.str_codigo + codigo + '}';
     }
 
 }

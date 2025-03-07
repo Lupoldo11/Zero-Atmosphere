@@ -43,18 +43,18 @@ public class AeroCar extends Vehiculo {
     public void llenarDeposito(double gasolina){
         if((gasolina+estado_deposito)<=capacidadCarburante){
             this.estado_deposito+=gasolina;
-            System.out.println("Deposito llenado");
+            System.out.println(Text.deposito_lleno);
         } else {
-            System.out.println("La gasolina supera a la cantidad máxima \nDepósito Máximo: "+capacidadCarburante+
-                    "\nDepósito del vehículo: "+estado_deposito+"\nGasolina que falta: "+(capacidadCarburante-estado_deposito));
+            System.out.println(Text.demasiada_gasolina +capacidadCarburante+
+                    Text.str_estado_deposito +estado_deposito+Text.gasolina_falta+(capacidadCarburante-estado_deposito));
         }
     }
     
     //ARREGLAR
     @Override
     public String toString() {
-        String texto=Text.guiones +"\nAeroCar "+this.codigo+", Marca: "+this.modelo +
-                "\nTripulantes: "+
+        String texto=Text.guiones +Text.car+this.codigo+Text.marca+this.modelo +
+                Text.tripulantes+
                 "\n"+this.personas[0].getNombre() +" "+ this.personas[0].getApellidos()+
                 "\n"+this.personas[1].getNombre() +" "+ this.personas[1].getApellidos()+
                 "\n"+this.personas[2].getNombre() +" "+ this.personas[2].getApellidos()+
