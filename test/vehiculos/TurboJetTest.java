@@ -19,59 +19,60 @@ public class TurboJetTest {
     @Test
     public void testGetPotencia() {
         System.out.println("getPotencia");
-        TurboJet instance = null;
-        int expResult = 0;
-        int result = instance.getPotencia();
+        int potencia = 3;
+        TurboJet turboJet = new TurboJet(potencia,3,"Hola");
+        int expResult = potencia;
+        int result = turboJet.getPotencia();
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
 
     @Test
     public void testSetPotencia() {
         System.out.println("setPotencia");
-        int potencia = 0;
-        TurboJet instance = null;
-        instance.setPotencia(potencia);
-        fail("The test case is a prototype.");
+        int potencia = 3;
+        TurboJet turboJet = new TurboJet(potencia,3,"Hola");
+        turboJet.setPotencia(potencia);
     }
 
     @Test
     public void testGetGastoCarburante() {
         System.out.println("getGastoCarburante");
-        TurboJet instance = null;
-        int expResult = 0;
-        int result = instance.getGastoCarburante();
+        int gastoC = 3;
+        TurboJet turboJet = new TurboJet(2,gastoC,"Hola");
+        int expResult = gastoC;
+        int result = turboJet.getGastoCarburante();
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
 
     @Test
     public void testSetGastoCarburante() {
         System.out.println("setGastoCarburante");
-        int gastoCarburante = 0;
-        TurboJet instance = null;
-        instance.setGastoCarburante(gastoCarburante);
-        fail("The test case is a prototype.");
+        int gastoC = 3;
+        TurboJet turboJet = new TurboJet(2,gastoC,"Hola");
+        turboJet.setGastoCarburante(gastoC);
     }
 
     @Test
     public void testGetCodigo() {
         System.out.println("getCodigo");
-        TurboJet instance = null;
-        String expResult = "";
-        String result = instance.getCodigo();
+        int gastoC = 3;
+        String codigo = "1234";
+        TurboJet turboJet = new TurboJet(2,gastoC,codigo);
+        String expResult = codigo;
+        String result = turboJet.getCodigo();
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
 
     @Test
     public void testToString() {
         System.out.println("toString");
-        TurboJet instance = null;
-        String expResult = "";
-        String result = instance.toString();
+        int gastoC = 3;
+        int potencia = 2;
+        String codigo = "1234";
+        TurboJet turboJet = new TurboJet(potencia,gastoC,codigo);
+        String expResult = "TurboJet{" + "potencia=" + potencia + ", gastoCarburante=" + gastoC + ", codigo=" + codigo + '}';;
+        String result = turboJet.toString();
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
     
 }

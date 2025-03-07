@@ -19,7 +19,9 @@ public class VehiculoTest {
     @Test
     public void testGetNumPersonas() {
         System.out.println("getNumPersonas");
-        Vehiculo instance = null;
+        TurboJet turboJet = new TurboJet(1,3,"Hola");
+        int numPersonas= 2;
+        AeroBike aeroBike = new AeroBike(2,"verde",true,3,6,turboJet);
         int expResult = 0;
         int result = instance.getNumPersonas();
         assertEquals(expResult, result);
@@ -114,11 +116,5 @@ public class VehiculoTest {
         fail("The test case is a prototype.");
     }
 
-    public class VehiculoImpl extends Vehiculo {
-
-        public VehiculoImpl() {
-            super(0, 0, null);
-        }
-    }
     
 }

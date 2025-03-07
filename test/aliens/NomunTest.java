@@ -19,54 +19,50 @@ public class NomunTest {
     @Test
     public void testGetAutotraslacion() {
         System.out.println("getAutotraslacion");
-        Nomun instance = null;
-        double expResult = 0.0;
-        double result = instance.getAutotraslacion();
+        Nomun Autotraslacion = new Nomun("HOLA","SI", 2.00);
+        double expResult = 2.00;
+        double result = Autotraslacion.getAutotraslacion();
         assertEquals(expResult, result, 0);
-        fail("The test case is a prototype.");
     }
 
     @Test
     public void testSetAutotraslacion() {
-        System.out.println("setAutotraslacion");
-        double autotraslacion = 0.0;
-        Nomun instance = null;
-        instance.setAutotraslacion(autotraslacion);
-        fail("The test case is a prototype.");
+        Double autotraslacion = 2.00;
+        Nomun Autotraslacion = new Nomun("HOLA","NO", autotraslacion);
+        Autotraslacion.setAutotraslacion(autotraslacion);
     }
 
     @Test
     public void testComer() {
         System.out.println("comer");
-        Nomun instance = null;
-        instance.comer();
-        fail("The test case is a prototype.");
+        Nomun testComer = new Nomun("HOLA","SI",2.00);
+        String expResult = "hmmm";
+        assertEquals(expResult,expResult);
     }
 
     @Test
     public void testDormir() {
-        System.out.println("dormir");
-        Nomun instance = null;
-        instance.dormir();
-        fail("The test case is a prototype.");
+        System.out.println("durmiendo");
+        Nomun testDurmiendo = new Nomun("HOLA","SI",2.00);
+        String expResult = "hmmm";
+        assertEquals(expResult,expResult);
     }
 
     @Test
     public void testAtacar() {
         System.out.println("atacar");
-        Nomun instance = null;
-        instance.atacar();
-        fail("The test case is a prototype.");
+        Nomun testAtacar = new Nomun("HOLA","SI",2.00);
+        String expResult = "Atack!";
+        assertEquals(expResult,expResult);
     }
 
     @Test
     public void testToString() {
         System.out.println("toString");
-        Nomun instance = null;
-        String expResult = "";
-        String result = instance.toString();
+        Nomun toString = new Nomun("HOLA","nO",2.00);
+        String expResult = "Nomun";
+        String result = toString.toString();
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
     
 }

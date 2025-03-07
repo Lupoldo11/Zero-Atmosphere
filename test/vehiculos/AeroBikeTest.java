@@ -4,6 +4,7 @@
  */
 package vehiculos;
 
+import habitaciones.TunelCiclonico;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,6 +22,7 @@ public class AeroBikeTest {
         System.out.println("getVelocidadMax");
         int velMax = 10;
         TurboJet turboJet = new TurboJet(1,3,"Hola");
+        TunelCiclonico tc = new TunelCiclonico();
         AeroBike aeroBike = new AeroBike(velMax,"verde",true,3,6,turboJet);
         int result = aeroBike.getVelocidadMax();
         int expectresult = velMax;

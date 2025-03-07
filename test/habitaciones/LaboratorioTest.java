@@ -1,24 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package habitaciones;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import habitaciones.Laboratorio;
+import vehiculos.Nave;  // Asegúrate de que esta clase existe
 
-/**
- *
- * @author gasto
- */
 public class LaboratorioTest {
     
-    public LaboratorioTest() {
-    }
-
     @Test
-    public void testSomeMethod() {
-        fail("The test case is a prototype.");
+    public void testAtributos() {
+        Laboratorio lab = new Laboratorio();
+        
+        // Verificar si los atributos están inicializados correctamente
+        assertNull(lab.nave);  // Debería ser null si no se inicializa en el constructor
+        assertEquals(0, lab.capsulasHibernacion);  // int por defecto es 0
     }
-    
 }

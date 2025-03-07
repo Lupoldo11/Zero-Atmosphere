@@ -28,11 +28,11 @@ public class GatoTest {
     @Test
     public void testGetRaza() {
         System.out.println("getRaza");
-        Gato instance = null;
-        String expResult = "";
-        String result = instance.getRaza();
+        String Raza = "Pitbull";
+        Gato gto = new Gato(Raza,"b","c");
+        String expResult = "Pitbull";
+        String result = gto.getRaza();
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
 
     @Test

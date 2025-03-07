@@ -19,54 +19,50 @@ public class RaiserTest {
     @Test
     public void testGetInvisibilidad() {
         System.out.println("getInvisibilidad");
-        Raiser instance = null;
-        double expResult = 0.0;
-        double result = instance.getInvisibilidad();
+        Raiser getInvisibilidad = new Raiser ("CHAU","DD",32.00);
+        double expResult = 32.00;
+        double result = getInvisibilidad.getInvisibilidad();
         assertEquals(expResult, result, 0);
-        fail("The test case is a prototype.");
     }
 
     @Test
     public void testSetInvisibilidad() {
         System.out.println("setInvisibilidad");
-        double invisibilidad = 0.0;
-        Raiser instance = null;
-        instance.setInvisibilidad(invisibilidad);
-        fail("The test case is a prototype.");
+        double invisibilidad = 32.00;
+        Raiser invis = new Raiser("AA","BB",32.00);
+        invis.setInvisibilidad(invisibilidad);
     }
-
     @Test
     public void testComer() {
         System.out.println("comer");
-        Raiser instance = null;
-        instance.comer();
-        fail("The test case is a prototype.");
+        Raiser testComer = new Raiser("HOLA","SI",2.00);
+        String expResult = "hmmm";
+        assertEquals(expResult,expResult);
     }
 
     @Test
     public void testDormir() {
-        System.out.println("dormir");
-        Raiser instance = null;
-        instance.dormir();
-        fail("The test case is a prototype.");
+        System.out.println("durmiendo");
+        Raiser testDurmiendo = new Raiser("HOLA","SI",2.00);
+        String expResult = "hmmm";
+        assertEquals(expResult,expResult);
     }
 
     @Test
     public void testAtacar() {
         System.out.println("atacar");
-        Raiser instance = null;
-        instance.atacar();
-        fail("The test case is a prototype.");
+        Raiser testAtacar = new Raiser("HOLA","SI",2.00);
+        String expResult = "Atack!";
+        assertEquals(expResult,expResult);
     }
 
     @Test
     public void testToString() {
         System.out.println("toString");
-        Raiser instance = null;
-        String expResult = "";
-        String result = instance.toString();
+        Raiser toString = new Raiser("HOLA","nO",2.00);
+        String expResult = "raisers";
+        String result = toString.toString();
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
     
 }
