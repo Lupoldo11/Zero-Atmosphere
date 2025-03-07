@@ -17,7 +17,7 @@ public class LectorTxt {
         try {
             for (String file:Text.files){
                 List<String> listFile= new ArrayList<>();
-                List<String> lineas = Files.readAllLines(Paths.get(Text.directorio_files+file));
+                List<String> lineas = Files.readAllLines(Paths.get(Config.new_directorio+file));
                 for (String linea : lineas) {
                     String[] linea_con_comas=linea.split(",");
                     for (String nombre : linea_con_comas){
@@ -34,10 +34,12 @@ public class LectorTxt {
     //Administra los listFile
     public static void admin(List<String> listFile, String file){
         switch (file){
-            case"Nombres.txt"-> Text.fileNombres= listFile;
-            case"Apellidos.txt"-> Text.fileApellidos= listFile;
-            case"MascotaN.txt"-> Text.fileMascotaN= listFile;
-            case"MascotaR.txt"-> Text.fileMascotaR= listFile;
+            case"nombres.txt"-> Text.fileNombres= listFile;
+            case"apellidos.txt"-> Text.fileApellidos= listFile;
+            case"mascotas.txt"-> Text.fileMascotaN= listFile;
+            case"perros.txt"-> Text.filePerros= listFile;
+            case"pajaros.txt"-> Text.filePajaros= listFile;
+            case"gatos.txt"-> Text.fileGatos= listFile;
             default->System.out.println(Text.error_seleccion);
         }
     }
@@ -80,7 +82,6 @@ public class LectorTxt {
                 break;
             case "3":
                 salir = true;
-                guardado = true;
                 break;
             default:
                 System.out.println(Text.error);

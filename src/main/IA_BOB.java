@@ -49,9 +49,9 @@ public class IA_BOB {
         System.out.println(Text.guiones);
         System.out.println(Text.accion+" 3 y 4");
         System.out.println(Text.cuantos_soldados);
-        int num_soldados = Text.intro.nextInt();
+        Text.num_soldados = Text.intro.nextInt();
         System.out.println(Text.cuantos_mineros);
-        int num_mineros = Text.intro.nextInt();
+        Text.num_mineros = Text.intro.nextInt();
         Text.intro.nextLine();
         int total_personas= Text.num_soldados + Text.num_mineros;
         Persona.generadorPersona(total_personas,Text.num_soldados); //las mascotas se generan aleatorias aquí
@@ -65,7 +65,7 @@ public class IA_BOB {
         //7)Vehiculos utilizados  (formula antia de empaquetamiento)
         System.out.println(Text.guiones);
         System.out.println(Text.accion+" 7");
-        utils.AsignacionVehiculo.selectorVehiculos(Text.listPersona.size(), Text.listPersona); //ARREGLAR
+        //utils.AsignacionVehiculo.selectorVehiculos(Text.listPersona.size(), Text.listPersona); //ARREGLAR
         
         //8) Coste Total Operación (formula ana)
         System.out.println(Text.guiones);

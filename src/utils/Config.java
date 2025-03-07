@@ -19,15 +19,17 @@ public class Config {
                 case "2" -> Idiomas.cambiar_idioma();
                 case "3" -> LectorTxt.menuFactura();
                 case "4" -> salida=true;
+                case "5" -> System.out.println(Text.directorio_files);
                 default -> System.out.println(Text.error_seleccion);
             }
         } while (salida!=true);
     }
     
+    public static String new_directorio;
     //Cambiar directorio
     public static void change_directory(){
         System.out.print(Text.intro_directorio);
-        String new_directorio= Text.intro.nextLine();
+        new_directorio= Text.intro.nextLine(); //Hay que meter la url con un \ para situarse en el directorio (dentro)
         boolean cheks= comprobar_directorio(new_directorio);
         if (cheks){
             Text.directorio_files=new_directorio;
@@ -51,16 +53,19 @@ public class Config {
     
     //Comprueba si los archivos que necesitamos están en el directorio
     public static boolean comprobar_archivos(String[] listFiles){
-        boolean[] checks = {false,false,false,false};
+        boolean[] checks = {false,false,false,false,false,false};
         for (String file : listFiles){
             switch (file){
-                case "Nombres.txt" -> checks[0]=true;
-                case "Apellidos.txt" -> checks[1]=true;
-                case "MascotaN.txt" -> checks[2]=true;
-                case "MascotaR.txt" -> checks[3]=true;
+                case "nombres.txt" -> checks[0]=true;
+                case "apellidos.txt" -> checks[1]=true;
+                case "mascotas.txt" -> checks[2]=true;
+                case "perros.txt" -> checks[3]=true;
+                case "gatos.txt" -> checks[4]=true;
+                case "pajaros.txt" -> checks[5]=true;
             }
         }
-        if (checks[0]==true && checks[1]==true && checks[2]==true && checks[3]==true){
+        if (checks[0]==true && checks[1]==true && checks[2]==true && checks[3]==true && checks[4]==true && checks[5]==true){
+                main.IA_EVA.check_automatico=true;
                 LectorTxt.lectorFiles();
                 System.out.println(Text.dir_enlazado);
                 return true;

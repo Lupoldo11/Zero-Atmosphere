@@ -156,7 +156,9 @@ public class Text {
     public static List<String> fileNombres;
     public static List<String> fileApellidos;
     public static List<String> fileMascotaN;
-    public static List<String> fileMascotaR;
+    public static List<String> filePerros;
+    public static List<String> fileGatos;
+    public static List<String> filePajaros;
 
     //HashMap para asociacion mascota-dueño
     public static HashMap<String, String> mascota_dueño = new HashMap<>();

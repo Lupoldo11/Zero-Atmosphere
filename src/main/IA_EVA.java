@@ -43,10 +43,11 @@ public class IA_EVA {
         }        
     }
     
+    public static boolean check_automatico = false;
+    
     public static void main(String[] args) {
         boolean salida=false;
         do {
-            boolean check_automatico = false;
             System.out.println(Text.menu_seleccion_inicio);
             String seleccion = Text.intro.nextLine();
             

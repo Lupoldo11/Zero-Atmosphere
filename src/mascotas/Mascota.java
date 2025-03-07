@@ -6,7 +6,6 @@ package mascotas;
 
 import utils.Codigo;
 import utils.Text;
-import personas.Persona;
 
 public abstract class Mascota {
     //atributos
