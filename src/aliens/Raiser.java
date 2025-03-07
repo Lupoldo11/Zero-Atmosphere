@@ -1,5 +1,8 @@
 
 package aliens;
+
+import utils.Text;
+
 /**
  *
  * @author gasto
@@ -26,17 +29,17 @@ public class Raiser extends Alien {
     //Metodos abstractos del padre
     @Override
     public void comer() {
-        System.out.println("Está comiendo");
+        System.out.println(Text.alien_come);
     }
 
     @Override
     public void dormir() {
-        System.out.println("Zzzz");
+        System.out.println(Text.alien_duerme);
     }
 
     @Override
     public void atacar() {
-        System.out.println("Al ataque!!!!");
+        System.out.println(Text.alien_ataca);
     }
 
     //Metodo toString

@@ -8,96 +8,115 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Vector;
-import java.util.Properties;
 import aliens.Alien;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import mascotas.Mascota;
 import personas.Persona;
 import vehiculos.Vehiculo;
 
 public class Text {
 
-    //Contenido String o textual (por defecto)
+    // Contenido String o textual (por defecto)
+    // Menus 
     public static String menu_seleccion_inicio = "Lista de opciones: \n1) IA_Bob (Seleccionable) \n2) IA_Alonso (Automático) \n3) Ajustes \n4) Salir";
-    public static String error_seleccion = "Opción no disponible";
-    public static String cierre_sesion = "";
     public static String menu_ajustes = "1) Cambiar directorio \n2) Cambiar idioma \n3) Salir"; 
+    public static String menu_factura = "1.Ver factura en pantalla \n 2.Guardar factura\n 3.Salir";
+    public static String cierre_sesion = "Cerrando sesion";
+    
+    // Errores
+    public static String error = "Error";
+    public static String error_seleccion = "Opción no disponible";
+    public static String error_cambio_dir = "No se ha podido cambiar";
+    public static String error_dir_no_existe = "Esta ruta no existe";
+    public static String error_dir_no_archivos = "En este directorio no se encuentran todos archivos necesarios";
+    public static String error_dir_no_ajustado = " directorio no ajustado";
+    public static String error_guardar_factura = "Error al guardar la factura";
+    
+    // IA
+    // IA General
     public static String accion = "Accion";
     public static String listado_de = "Listado de";
     public static String numero_de = "Numero de";
+    public static String tamanio_lista = "Tamaño lista: ";
+    // IA Aliens
+    public static String pregunta_aliens = "¿Cuántos alienígenas hay en la nave ?";
+    // IA Distancia
     public static String pregunta_distancia = "¿Cual es la distancia hacia la otra nave?";
     public static String respuesta_distancia = "La distancia con la nave es de: ";
     public static String anios_luz = " año/luz. \nPor tanto es: ";
+    // IA Duracion
     public static String duracion_mision = "La misión durará ";
     public static String dias = " días";
+    // IA Coste
     public static String coste_mision = "El coste total del operativo es de: " ;
+    // IA Personas
+    public static String cuantos_soldados = "¿Cuántos soldados quieres?";
+    public static String cuantos_mineros = "¿Cuántos mineros quieres?";
+    
+    // Configuracion
     public static String intro_directorio = "Introduce directorio: ";
-    public static String error_cambio_dir = "No se ha podido cambiar";
-    public static String dir_no_existe = "Esta ruta no existe";
     public static String dir_enlazado = "Directorio enlazado y con el contenido requerido";
-    public static String dir_no_archivos = "En este directorio no se encuentran todos archivos necesarios";
-    public static String dir_no_ajustado = " directorio no ajustado";
-    public static String menu_factura = "1.Ver factura en pantalla \n 2.Guardar factura\n 3.Salir";
     
+    //Aliens
+    public static String alien_come = "Hmmm";
+    public static String alien_duerme = "Duermiendo";
+    public static String alien_ataca = "Ataque!";
     
- 
-    //Idiomas
-    //Crear y cargar properties
-    static Properties propsEng = new Properties(); //Crear propertie
-    static Properties propsEsp = new Properties(); 
+    // Mascotas
+    public static String mascota_come = " esta comiendo";
+    public static String mascota_duerme = " esta durmiendo";
+    public static String str_amo = " amo:";
+    public static String codigo_mascota = " codigo de mascota: ";
+    public static String str_raza = " de raza ";
+    public static String str_edad = " edad ";
+    // Gato
+    public static String maullar = "Miauuu";
+    public static String ronronear = "Prrrrr";
+    public static String gato_nombre = "Gato cuyo nombre es ";
+    public static String str_color = " color ";
+    public static String str_pelo = " tipo de pelo ";
+    // Pajaro
+    public static String piar = "Piiiioo pioo";
+    public static String vuela = " esta volando";
+    public static String no_vuela = "no puede volar";
+    public static String str_pajaro = "Pajaro ";
+    public static String str_especie = " su especie es ";
+    // Perro
+    public static String ladrar = "Guau guau";
+    public static String jugar = " esta jugando";
+    public static String perro_nombre = "Perro cuyo nombre es ";
+    public static String str_peso = ", pesa ";
+    public static String str_tamanio = "kgs, tamaño: ";
     
-    public static void cargarProperties(){
-        try (InputStream urlPropsEsp = new FileInputStream("src/utils/espanol.properties")) {
-            propsEsp.load(urlPropsEsp);
-            
-        } catch (Exception e) {
-            System.out.println("Error al cargar properties");
-        }
-        try (InputStream urlPropsEng = new FileInputStream("src/utils/english.properties")) {
-            propsEng.load(urlPropsEng);
-            
-            System.out.println(cierre_sesion);
+    //Personas
+    public static String str_minero = "Trabajo: Minero: ";
+    public static String str_soldado = "\nTrabajo: Soldado: ";
+    public static String persona_nombre = "Nombre: ";
+    public static String apellidos = "\nApellidos: ";
+    public static String persona_edad = "\nEdad: ";
+    public static String rango_general = "General";
+    public static String rango_coronel = "Coronel";
+    public static String rango_capitan = "Capitán";
+    public static String rango_sargento = "Sargento";
+    public static String rango_tropa = "Tropa";
+    
+    // Prefijo odigo
+    public static String pf_turbojet = "tjet";
+    public static String pf_minero = "min";
+    public static String pf_soldado = "sold";
+    public static String pf_mascota = "masc";
+    public static String pf_alien = "ali";
+    public static String pf_aerocar = "car";
 
-        } catch (Exception e) {
-            System.out.println("Error al cargar properties");
-        }
-    }
-    
-    //Seleccionar properties
-    public static void seleccion_properties(Properties props){
-        menu_seleccion_inicio = props.getProperty("menu_seleccion_inicio");
-        error_seleccion = props.getProperty("error_seleccion");
-        cierre_sesion = props.getProperty("cierre_sesion");
-        menu_ajustes = props.getProperty("menu_ajustes");
-        intro_directorio = props.getProperty("intro_directorio");
-        error_cambio_dir = props.getProperty("error_cambio_dir");
-        dir_no_existe = props.getProperty("dir_no_existe");
-        dir_enlazado = props.getProperty("dir_enlazado");
-        dir_no_archivos = props.getProperty("dir_no_archivos");
-        dir_no_ajustado = props.getProperty("dir_no_ajustado");
-        menu_factura = props.getProperty("menu_factura");
-    }
-    
-    //Menu cambio de idioma
-    public static void cambiar_idioma() {
-        cargarProperties();
-        System.out.println("Elige un idioma:\n 1.Espanol\n 2.English");
-        String seleccion = intro.nextLine();
-        switch (seleccion) {
-            case "1" -> {
-                System.out.println("Idioma cambiado a Espanol");
-                seleccion_properties(propsEsp);
+    // Factura
+    public static String str_coste_mision ="COSTE DE LA MISION\n";
+    public static String str_personas_coste = "Personas             Coste/Dia       Total\n";
+    public static String yurs = " yurs\n";
+    public static String coste_minero = "Minero            20yurs       \"";
+    public static String coste_soldado = "  Soldado            22yurs       ";
+    public static String coste_vehiculos = "Vehiculos                            Total\n";
+    public static String coste_aliens = "Penalizacion por alien  4yurs/dia  ";
+    public static String fac_guardada = "Factura guardada";
 
-            }
-            case "2" -> {
-                System.out.println("Language changed to English");
-                seleccion_properties(propsEng);
-            }
-            default -> System.out.println(error_seleccion);
-        }
-    }
-    
     //String para funciones
     public static String guiones = "-----------------------------------------------";
     public static String separador = "||||||||||||||||||||||||||||||||||||||||||||||||||||";

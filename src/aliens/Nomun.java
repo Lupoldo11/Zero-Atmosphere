@@ -3,6 +3,9 @@ package aliens;
  *
  * @author gasto
  */
+
+import utils.Text;
+
 public class Nomun extends Alien{
     //Atributo
     public double autotraslacion;
@@ -25,17 +28,17 @@ public class Nomun extends Alien{
     //Metodos abstractos del padre
     @Override
     public void comer() {
-        System.out.println("Hmmm");
+        System.out.println(Text.alien_come);
     }
 
     @Override
     public void dormir() {
-        System.out.println("Duermiendo");
+        System.out.println(Text.alien_duerme);
     }
 
     @Override
     public void atacar() {
-        System.out.println("Atack!");
+        System.out.println(Text.alien_ataca);
     }
 
     //Metodo toString

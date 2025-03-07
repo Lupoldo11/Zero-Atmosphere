@@ -30,11 +30,11 @@ public class Soldado extends Persona{
         String nombreRango=null;
         String rango = String.valueOf((int) (Math.random() * 5) + 1);
         switch (rango) {
-                case "1" -> nombreRango="General";
-                case "2" -> nombreRango="Coronel";
-                case "3" -> nombreRango="Capitán";
-                case "4" -> nombreRango="Sargento";
-                case "5" -> nombreRango="Tropa";
+                case "1" -> nombreRango=Text.rango_general;
+                case "2" -> nombreRango=Text.rango_coronel;
+                case "3" -> nombreRango=Text.rango_capitan;
+                case "4" -> nombreRango=Text.rango_sargento;
+                case "5" -> nombreRango=Text.rango_tropa;
                 default -> System.out.println(Text.error_seleccion);
         }
         return nombreRango;
@@ -42,6 +42,6 @@ public class Soldado extends Persona{
     
     @Override
     public String toString(){
-        return "\nTrabajo: Soldado: "+Codigo.generarSoldado()+"\n"+super.texto_toString() + "\n"+Text.separador; 
+        return Text.str_soldado +Codigo.generarSoldado()+"\n"+super.texto_toString() + "\n"+Text.separador; 
     }
 }

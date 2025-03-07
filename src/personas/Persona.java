@@ -79,8 +79,8 @@ public class Persona {
     //Metodo toString
     public String texto_toString(){
         String texto_salida="Nombre: "+this.nombre+
-                                        "\nApellidos: "+this.apellido1+" "+this.apellido2+
-                                        "\nEdad: "+this.edad;
+                                        Text.apellidos+this.apellido1+" "+this.apellido2+
+                                        Text.persona_edad +this.edad;
         return texto_salida;
     }
     

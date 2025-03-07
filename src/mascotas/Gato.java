@@ -1,4 +1,7 @@
 package mascotas;
+
+import utils.Text;
+
 /**
  *
  * @author masar
@@ -46,26 +49,26 @@ public class Gato extends Mascota {
 
     @Override
     public void comer() {
-        System.out.println(nombre + " esta comiendo");
+        System.out.println(nombre + Text.mascota_come);
     }
 
     @Override
     public void dormir() {
-        System.out.println(nombre + " esta durmiendo");
+        System.out.println(nombre + Text.mascota_duerme);
     }
 
     public void maullar() {
-        System.out.println("Miauuu");
+        System.out.println(Text.maullar);
     }
 
     public void ronronear() {
-        System.out.println("Prrrrr");
+        System.out.println(Text.ronronear);
     }
 
     @Override
     public String toString() {
-        return "Gato cuyo nombre es " + nombre + " edad " + edad + " de raza "
-                + raza + " color " + color + " tipo de pelo " + pelo + " amo:" + 0+ " codigo de mascota: "+super.codigo;
+        return Text.gato_nombre + nombre + Text.str_edad + edad + Text.str_raza
+                + raza + Text.str_color + color + Text.str_pelo + pelo + Text.str_amo + 0+ Text.codigo_mascota+super.codigo;
     }
 
 }

@@ -16,7 +16,7 @@ public class Config {
             String seleccion = Text.intro.nextLine();
             switch (seleccion){
                 case "1" -> change_directory();
-                case "2" -> Text.cambiar_idioma();
+                case "2" -> Idiomas.cambiar_idioma();
                 case "3" -> LectorTxt.menuFactura();
                 case "4" -> salida=true;
                 default -> System.out.println(Text.error_seleccion);
@@ -44,7 +44,7 @@ public class Config {
             String[] listFiles = directorio.list();
             return comprobar_archivos(listFiles);
         } else {
-            System.out.println(Text.dir_no_existe);
+            System.out.println(Text.error_dir_no_existe);
             return false;
         }
     }
@@ -65,7 +65,7 @@ public class Config {
                 System.out.println(Text.dir_enlazado);
                 return true;
             } else {
-                System.out.println(Text.dir_no_archivos);
+                System.out.println(Text.error_dir_no_archivos);
                 return false;
             }
     }

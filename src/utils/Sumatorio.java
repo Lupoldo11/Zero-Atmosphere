@@ -55,19 +55,19 @@ public class Sumatorio {
 
         String factura = "*********************************************************\n"
                 + "*********************************************************\n"
-                + "COSTE DE LA MISION\n"
+                + Text.str_coste_mision
                 + "*********************************************************\n"
-                + "Personas             Coste/Dia       Total\n"
+                + Text.str_personas_coste
                 + "_____________________________________________________________\n"
-                + "  Minero             20yurs       " + costeMineros + " yurs\n"
-                + "  Soldado            22yurs       " + costeSoldados + " yurs\n"
+                + Text.coste_minero+  + costeMineros + Text.yurs
+                + Text.coste_soldado + costeSoldados + Text.yurs
                 + "*********************************************************\n"
-                + "Vehiculos                            Total\n"
+                + Text.coste_vehiculos
                 + "____________________________________________________________\n"
-                + "  AeroCar                          " + costeCars + " yurs\n"
-                + "  AeroBike                         " + costeBikes + " yurs\n"
+                + "  AeroCar                          " + costeCars + Text.yurs
+                + "  AeroBike                         " + costeBikes + Text.yurs
                 + "*********************************************************\n"
-                + "Penalizacion por alien  4yurs/dia  " + sumarCosteAliens() + " yurs\n"
+                + Text.coste_aliens + sumarCosteAliens() + Text.yurs
                 + "*********************************************************\n"
                 + "*********************************************************\n"
                 + "TOTAL: " + costeTotal() + "\n"

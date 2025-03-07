@@ -47,9 +47,9 @@ public class LectorTxt {
             FileWriter imprimir = new FileWriter(directorio+"\\factura.txt"); // puedes añadir la ruta de archivo donde quieras que se guarde
             imprimir.write(Sumatorio.imprimirFactura());
             imprimir.close();
-            System.out.println("Factura guardada");
+            System.out.println(Text.fac_guardada);
         } catch (IOException e) {
-            System.out.println("Error al guardar la factura");
+            System.out.println(Text.error_guardar_factura);
             e.printStackTrace();
         }
     }
@@ -74,7 +74,7 @@ public class LectorTxt {
                         guardado = true;
                     }
                     else{
-                        System.out.println(Text.dir_no_existe);
+                        System.out.println(Text.error_dir_no_existe);
                     }
                 }while(guardado == false);
                 break;
@@ -83,7 +83,7 @@ public class LectorTxt {
                 guardado = true;
                 break;
             default:
-                System.out.println("Error");
+                System.out.println(Text.error);
         }
     }
 }

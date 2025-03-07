@@ -1,4 +1,7 @@
 package mascotas;
+
+import utils.Text;
+
 /**
  *
  * @author masar
@@ -45,26 +48,26 @@ public class Perro extends Mascota{
     
     @Override
     public void comer(){
-        System.out.println(nombre+" esta comiendo");
+        System.out.println(nombre+Text.mascota_come);
     }
     
     @Override
     public void dormir(){
-        System.out.println(nombre+" esta durmiendo");
+        System.out.println(nombre+Text.mascota_duerme);
     }
     
     public void ladrar(){
-        System.out.println("Guau guau");
+        System.out.println(Text.ladrar);
     }
     
     public void jugar(){
-        System.out.println(nombre+" esta jugando");
+        System.out.println(nombre+Text.jugar);
     }
 
     @Override
     public String toString() {
-        return "Perro cuyo nombre es " +nombre+", de raza " + raza + ", pesa " + peso + "kgs, tamaño: " + size+ ". Propietario: "
-                + ""+0+" codigo de mascota: "+super.codigo;
+        return Text.perro_nombre +nombre+ Text.str_raza + raza + Text.str_peso + peso + Text.str_tamanio + size+ Text.str_amo
+                + ""+0+Text.codigo_mascota+super.codigo;
     }
     
     
