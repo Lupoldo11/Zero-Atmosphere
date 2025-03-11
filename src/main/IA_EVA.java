@@ -1,6 +1,5 @@
 //*) Genera los 4 principales tripulantes (Carmen, Laura, Lopez, federico) , la nave principal, la nave objetivo
 //*)Arreglar los toString de los animales (perro,gato,pajaro) - lo del amo
-//Arreglar que cada nuevo intento se limpien las variables
 package main;
 
 /**
