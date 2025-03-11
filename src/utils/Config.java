@@ -19,13 +19,14 @@ public class Config {
                 case "2" -> Idiomas.cambiar_idioma();
                 case "3" -> LectorTxt.menuFactura();
                 case "4" -> salida=true;
-                case "5" -> System.out.println(Text.directorio_files);
+                case "5" -> System.out.println(Text.directorio_files); //Saber en que directorio está situado
                 default -> System.out.println(Text.error_seleccion);
             }
         } while (salida!=true);
     }
     
     public static String new_directorio;
+    
     //Cambiar directorio
     public static void change_directory(){
         System.out.print(Text.intro_directorio);
