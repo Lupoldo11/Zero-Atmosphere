@@ -30,6 +30,7 @@ public class Text {
     public static String error_dir_no_archivos = "En este directorio no se encuentran todos archivos necesarios";
     public static String error_dir_no_ajustado = " directorio no ajustado";
     public static String error_guardar_factura = "Error al guardar la factura";
+    public static String error_valor_invalido = "El valor no es válido";
     
     // IA
     // IA General
@@ -106,6 +107,7 @@ public class Text {
     public static String pf_mascota = "masc";
     public static String pf_alien = "ali";
     public static String pf_aerocar = "car";
+    public static String pf_herramienta = "her";
 
     // Factura
     public static String str_coste_mision ="COSTE DE LA MISION\n";
@@ -136,6 +138,13 @@ public class Text {
     public static String estelar = "estelar";
     public static String vehiculo_tj = "Vehiculo{" + " turbojet=";
     
+    // Herramientas
+    public static String metal_puro = "puro";
+    public static String metal_aleacion = "aleacion";
+    public static String sujecion_manual = "manual";
+    public static String sujecion_correa = "correa";
+    public static String traccion_ruedas = "ruedas";
+    public static String traccion_oruga = "oruga";
     
     //String para funciones
     public static String guiones = "-----------------------------------------------";
@@ -173,4 +182,6 @@ public class Text {
     final Persona carmen = new Persona("Carmen", "Lopez Arias", 59);
     final Persona federico = new Persona("Federico", "Lopez Lopez", 19);
     final Persona lopez = new Persona("Lopez", "Lopez Lopez", 63);
+    
+    
 }

@@ -10,6 +10,7 @@ public class Codigo {
     private static int contadorAlienigena = 1;
     private static int contadorVehiculo = 1;
     private static int contadorTurbo = 1;
+    private static int contadorHerramienta = 1;
     
     public static String generarTurboJet() {
         String idTurbo = Text.pf_turbojet + String.format("%04d", contadorTurbo);
@@ -49,5 +50,11 @@ public class Codigo {
         String idAerocar = Text.pf_aerocar + String.format("%04d", contadorVehiculo);
         contadorVehiculo++;
         return idAerocar;
+    }
+    
+    public static String generarHerramienta() {
+        String idHerramienta = Text.pf_herramienta + String.format("%04d", contadorHerramienta);
+        contadorHerramienta++;
+        return idHerramienta;
     }
 }
