@@ -8,7 +8,6 @@ import utils.Text;
  * @author Lupoldo
  */
 public class Pala extends Herramienta {
-
     //Atributos
     public int longMango;
     public String metal;
@@ -20,12 +19,13 @@ public class Pala extends Herramienta {
         this.metal = randomMetal();
     }
 
-    //Metodos
+    //Metodo static crear objeto
     public static Pala crear() {
         Pala pala = new Pala();
         return pala;
     }
 
+    //Metodos Getter
     public int getLongMango() {
         return longMango;
     }
@@ -51,20 +51,49 @@ public class Pala extends Herramienta {
     }
 
     //Para introducir manualmente los valores
-    public void setLongMango(int longMango) {
-        if (longMango >= 1 && longMango <= 5) {
-            this.longMango = longMango;
+    public void setLongMango() {
+        System.out.println("Cuanto de lago va a ser el mango?");
+        int largoMango = Text.intro.nextInt();
+        
+        if (largoMango >= 1 && largoMango <= 5) {
+            this.longMango = largoMango;
         } else {
             System.out.println(Text.error_valor_invalido);
         }
     }
 
-    public void setMetal(String metal) {
-        if (metal.toLowerCase().equals(Text.metal_puro) || metal.toLowerCase().equals(Text.metal_aleacion)) {
-            this.metal = metal;
-        } else {
-            System.out.println(Text.error_valor_invalido);
+    public void setMetal() {
+        System.out.println("Tipo de metal: 1) puro o 2) Aleacion");
+        String metalmod= Text.intro.nextLine();
+        metalmod = metalmod.toLowerCase();
+        
+        switch(metalmod){
+            case "puro"->this.metal= "metal";
+            case "aleacion"->this.metal= "aleacion";
+            default ->  System.out.println(Text.error_valor_invalido);
         }
     }
 
+    public static void modificar(Herramienta item){
+        Pala pala= (Pala) item;
+        System.out.println(pala.toString());
+        System.out.println("Qué atributo quieres modificar?");
+        String posicion = Text.intro.nextLine();
+        
+        switch(posicion){
+            case"1"-> System.out.println("El código no se puede cambiar");
+            case"2"-> pala.setProteccion(); //Modificar para entrada de valores
+            case"3"-> pala.setMetal(); //Modificar para entrada de valores
+            case"4"-> pala.setLongMango(); //Modificar para entrada de valores
+            default->System.out.println("Opcion no disponible");
+        }
+    }
+    
+    //toString
+    @Override
+    public String toString(){
+        String texto="Cibercompresor \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
+                "\n3.Metal: "+this.metal+"\n4.Longitud: "+this.longMango;
+        return texto;
+    }
 }

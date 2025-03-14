@@ -8,7 +8,6 @@ import utils.Text;
  * @author Lupoldo
  */
 public class Martillo extends Herramienta {
-
     //Atributos
     public int consumo;
     public String sujecion;
@@ -20,11 +19,13 @@ public class Martillo extends Herramienta {
         this.sujecion = randomSujecion();
     }
 
+    //Metodo static crear objeto
     public static Martillo crear() {
         Martillo martillo = new Martillo();
         return martillo;
     }
 
+    //Metodos Getter
     public int getConsumo() {
         return consumo;
     }
@@ -66,4 +67,26 @@ public class Martillo extends Herramienta {
         }
     }
 
+    public static void modificar(Herramienta item){
+        Martillo martillo= (Martillo) item;
+        System.out.println(martillo.toString());
+        System.out.println("Qué atributo quieres modificar?");
+        String posicion = Text.intro.nextLine();
+        
+        switch(posicion){
+            case"1"-> System.out.println("El código no se puede cambiar");
+            case"2"-> martillo.setProteccion(); //Modificar para entrada de valores
+            case"3"-> martillo.setConsumo(0); //Modificar para entrada de valores
+            case"4"-> martillo.setSujecion(posicion); //Modificar para entrada de valores
+            default->System.out.println("Opcion no disponible");
+        }
+    }
+    
+    //toString
+    @Override
+    public String toString(){
+        String texto="Cibercompresor \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
+                "\n3.Consumo: "+this.consumo+"\n4.Sujección: "+this.sujecion;
+        return texto;
+    }
 }

@@ -20,12 +20,13 @@ public class Cibercompresor extends Herramienta {
         this.traccion = randomTraccion();
     }
 
-    //Metodos
+    //Metodo static crear objeto
     public static Cibercompresor crear() {
         Cibercompresor compresor = new Cibercompresor();
         return compresor;
     }
 
+    //Metodo Getter
     public int getConsumo() {
         return consumo;
     }
@@ -51,20 +52,49 @@ public class Cibercompresor extends Herramienta {
     }
 
     //Para introducir manualmente los valores
-    public void setConsumo(int consumo) {
-        if (consumo >= 1 && consumo <= 5) {
-            this.consumo = consumo;
+    public void setConsumo() {
+        System.out.println("Cuanto consumo va a tener?");
+        int consum = Text.intro.nextInt();
+        
+        if (consum >= 1 && consum <= 5) {
+            this.consumo = consum;
         } else {
             System.out.println(Text.error_valor_invalido);
         }
     }
 
-    public void setTraccion(String traccion) {
-        if (traccion.toLowerCase().equals(Text.traccion_oruga) || traccion.toLowerCase().equals(Text.traccion_ruedas)) {
-            this.traccion = traccion;
-        } else {
-            System.out.println(Text.error_valor_invalido);
+    public void setTraccion() {
+        System.out.println("Tipo de metal: 1) puro o 2) Aleacion");
+        String trac= Text.intro.nextLine();
+        trac = trac.toLowerCase();
+        
+        switch(trac){
+            case "oruga"->this.traccion= "oruga";
+            case "ruedas"->this.traccion= "ruedas";
+            default ->  System.out.println(Text.error_valor_invalido);
         }
     }
 
+    public static void modificar(Herramienta item){
+        Cibercompresor compresor= (Cibercompresor) item;
+        System.out.println(compresor.toString());
+        System.out.println("Qué atributo quieres modificar?");
+        String posicion = Text.intro.nextLine();
+        
+        switch(posicion){
+            case"1"-> System.out.println("El código no se puede cambiar");
+            case"2"-> compresor.setProteccion(); //Modificar para entrada de valores
+            case"3"-> compresor.setConsumo(); //Modificar para entrada de valores
+            case"4"-> compresor.setTraccion(); //Modificar para entrada de valores
+            default->System.out.println("Opcion no disponible");
+        }
+    }
+    
+    //toString
+    @Override
+    public String toString(){
+        String texto="Cibercompresor \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
+                "\n3.Consumo: "+this.consumo+"\n4.Tracción: "+this.traccion;
+        return texto;
+    }
 }
