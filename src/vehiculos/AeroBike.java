@@ -56,9 +56,10 @@ public class AeroBike extends Vehiculo {
     @Override
     public String toString() {
         String texto=Text.guiones +Text.bike+this.codigo+Text.str_color+this.color +
-                Text.tripulantes +
-                "\n"+this.personas[0].getNombre() +" "+ this.personas[0].getApellidos()+
-                "\n"+this.personas[1].getNombre() +" "+ this.personas[1].getApellidos();
+                Text.tripulantes;
+        for (Persona persona : this.personas) {
+            texto += "\n" + persona.getNombre() + " " + persona.getApellidos();
+        }
         return texto;
     }
 

@@ -1,6 +1,5 @@
 package herramientas;
 
-import static main.IA_GASTON.sc;
 import utils.Codigo;
 import utils.Text;
 
@@ -56,6 +55,7 @@ public class Ciberexcavadora extends Herramienta {
     public void setConsumo() {
         System.out.println("Cuanto consumo va a tener?");
         int consum = Text.intro.nextInt();
+        Text.intro.nextLine();
         
         if (consum >= 1 && consum <= 5) {
             this.consumo = consum;
@@ -65,7 +65,7 @@ public class Ciberexcavadora extends Herramienta {
     }
 
     public void setTraccion() {
-        System.out.println("Tipo de metal: 1) puro o 2) Aleacion");
+        System.out.println("Tipo de tracción: 1)Oruga o 2)Rueda");
         String trac= Text.intro.nextLine();
         trac = trac.toLowerCase();
         
@@ -94,7 +94,7 @@ public class Ciberexcavadora extends Herramienta {
     //toString
     @Override
     public String toString(){
-        String texto="Cibercompresor \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
+        String texto="Ciberexcavadora \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
                 "\n3.Consumo: "+this.consumo+"\n4.Tracción: "+this.traccion;
         return texto;
     }

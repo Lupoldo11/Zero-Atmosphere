@@ -19,25 +19,6 @@ public abstract class Alien {
         this.codigo_ref= Codigo.generarAlienigena();
     }
 
-    //Getter y Setter
-    public String getArma() {
-        return arma;
-    }
-    public void setArma(String arma) {
-        this.arma = arma;
-    }
-    public String getDificultad() {
-        return dificultad;
-    }
-    public void setDificultad(String dificultad) {
-        this.dificultad = dificultad;
-    }
-    
-    //Metodos Abstractos
-    public abstract void comer();
-    public abstract void dormir();
-    public abstract void atacar();
-    
     //Metodo static para generar los alien (de forma consecutiva) [Auto-generación]
     public static void generadorAlien (int total_alien, int contador_Raiser){
         for (int i=0;i<total_alien;i++){

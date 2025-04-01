@@ -19,19 +19,6 @@ public abstract class Mascota {
         this.codigo = Codigo.generarMascota();
         this.edad=edad;
     }
-
-    //Getter y Setter
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
     
     public String getCodigo(){
         return this.codigo;
@@ -48,8 +35,4 @@ public abstract class Mascota {
         }
         Text.mascota_dueño.put(Text.listMascota.get(Text.listMascota.size()-1).getCodigo(),codigo);
     }
-    
-    // Métodos abstractos
-    public abstract void dormir();
-    public abstract void comer();
 }

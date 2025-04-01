@@ -55,6 +55,7 @@ public class Cibercompresor extends Herramienta {
     public void setConsumo() {
         System.out.println("Cuanto consumo va a tener?");
         int consum = Text.intro.nextInt();
+        Text.intro.nextLine();
         
         if (consum >= 1 && consum <= 5) {
             this.consumo = consum;
@@ -64,7 +65,7 @@ public class Cibercompresor extends Herramienta {
     }
 
     public void setTraccion() {
-        System.out.println("Tipo de metal: 1) puro o 2) Aleacion");
+        System.out.println("Tipo de tracción: 1)Oruga o 2)Ruedas");
         String trac= Text.intro.nextLine();
         trac = trac.toLowerCase();
         

@@ -23,7 +23,7 @@ public class IA_GASTON {
 
         //Seleccion Menu
         do {
-            System.out.println("1)Crear Herramienta \n2)Mostrar Herramienta \n3)Generar Archivo Binario \n4)Modificar Herramienta \n5)Salir");
+            System.out.println("1)Crear Herramienta \n2)Mostrar Herramienta \n3)Modificar Herramienta \n4)Salir");
             String seleccion = sc.nextLine();
             switch (seleccion) {
                 case "1" ->
@@ -31,11 +31,11 @@ public class IA_GASTON {
                 case "2" ->
                     mostrar_herramienta();
                 case "3" ->
-                    utils.Binary_file.generar_archivo();
-                case "4" ->
                     modificar_herramienta();
-                case "5" ->
+                case "5" ->{
+                    utils.Binary_file.generar_archivo();
                     salir = true;
+                }
                 default ->
                     System.out.println("Opción no disponible");
             }
@@ -44,7 +44,7 @@ public class IA_GASTON {
 
     public static void crear_herramienta() {
         System.out.println("1)Cibercompresor \n2)Ciberexcavadora \n3)Martillo \n4)Pala");
-        String seleccion = sc.nextLine();
+        String seleccion = sc.nextLine(); 
 
         switch (seleccion) {
             case "1" ->

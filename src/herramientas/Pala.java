@@ -54,6 +54,7 @@ public class Pala extends Herramienta {
     public void setLongMango() {
         System.out.println("Cuanto de lago va a ser el mango?");
         int largoMango = Text.intro.nextInt();
+        Text.intro.nextLine();
         
         if (largoMango >= 1 && largoMango <= 5) {
             this.longMango = largoMango;
@@ -63,7 +64,7 @@ public class Pala extends Herramienta {
     }
 
     public void setMetal() {
-        System.out.println("Tipo de metal: 1) puro o 2) Aleacion");
+        System.out.println("Tipo de metal: 1)Puro o 2)Aleación");
         String metalmod= Text.intro.nextLine();
         metalmod = metalmod.toLowerCase();
         
@@ -92,7 +93,7 @@ public class Pala extends Herramienta {
     //toString
     @Override
     public String toString(){
-        String texto="Cibercompresor \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
+        String texto="Pala \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
                 "\n3.Metal: "+this.metal+"\n4.Longitud: "+this.longMango;
         return texto;
     }

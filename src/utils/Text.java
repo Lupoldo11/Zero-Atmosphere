@@ -1,5 +1,4 @@
 package utils;
-
 /**
  *
  * @author Lupoldo
@@ -18,8 +17,8 @@ public class Text {
     // Contenido String o textual (por defecto)
     // Menus 
     public static String menu_seleccion_inicio = "Lista de opciones: \n1) IA_Bob (Seleccionable) \n2) IA_Alonso (Automático) \n3) Ajustes \n4) Salir";
-    public static String menu_ajustes = "1) Cambiar directorio \n2) Cambiar idioma \n3)Factura \n4)Salir"; 
-    public static String menu_factura = "1.Ver factura en pantalla \n 2.Guardar factura\n 3.Salir";
+    public static String menu_ajustes = "1) Cambiar directorio \n2) Cambiar idioma \n3) Factura \n4) Salir"; 
+    public static String menu_factura = "1.Ver factura en pantalla \n2.Guardar factura \n3.Salir";
     public static String cierre_sesion = "Cerrando sesion";
     
     // Errores
@@ -39,7 +38,7 @@ public class Text {
     public static String numero_de = "Numero de";
     public static String tamanio_lista = "Tamaño lista: ";
     // IA Aliens
-    public static String pregunta_aliens = "¿Cuántos alienígenas hay en la nave ?";
+    public static String pregunta_aliens = "¿Cuántos alienígenas hay en la nave?";
     // IA Distancia
     public static String pregunta_distancia = "¿Cual es la distancia hacia la otra nave?";
     public static String respuesta_distancia = "La distancia con la nave es de: ";
@@ -182,6 +181,4 @@ public class Text {
     final Persona carmen = new Persona("Carmen", "Lopez Arias", 59);
     final Persona federico = new Persona("Federico", "Lopez Lopez", 19);
     final Persona lopez = new Persona("Lopez", "Lopez Lopez", 63);
-    
-    
 }
