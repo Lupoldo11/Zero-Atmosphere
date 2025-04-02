@@ -94,7 +94,7 @@ public class Ciberexcavadora extends Herramienta {
     //toString
     @Override
     public String toString(){
-        String texto="Cibercompresor \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
+        String texto="Ciberexcavadora  \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
                 "\n3.Consumo: "+this.consumo+"\n4.Tracción: "+this.traccion;
         return texto;
     }

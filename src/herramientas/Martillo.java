@@ -85,7 +85,7 @@ public class Martillo extends Herramienta {
     //toString
     @Override
     public String toString(){
-        String texto="Cibercompresor \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
+        String texto="Martillo: \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
                 "\n3.Consumo: "+this.consumo+"\n4.Sujección: "+this.sujecion;
         return texto;
     }

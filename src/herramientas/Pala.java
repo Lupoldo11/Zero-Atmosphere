@@ -92,7 +92,7 @@ public class Pala extends Herramienta {
     //toString
     @Override
     public String toString(){
-        String texto="Cibercompresor \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
+        String texto="Pala \n1.Codigo: "+super.codigo+"\n2.Protección: "+super.proteccion+
                 "\n3.Metal: "+this.metal+"\n4.Longitud: "+this.longMango;
         return texto;
     }
