@@ -4,7 +4,7 @@ package main;
  *
  * @author Lupoldo
  */
-import herramientas.Herramienta;
+import herramientas.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,10 +13,7 @@ public class IA_GASTON {
     public static Scanner sc = new Scanner(System.in);
 
     //Listas para coger objetos
-    public static ArrayList<Herramienta> listPala = new ArrayList<>();
-    public static ArrayList<Herramienta> listExcavador = new ArrayList<>();
-    public static ArrayList<Herramienta> listMartillo = new ArrayList<>();
-    public static ArrayList<Herramienta> listCompresor = new ArrayList<>();
+    public static ArrayList<Herramienta> listHerramientas = new ArrayList<>();
 
     public static void main(String[] args) {
         boolean salir = false;
@@ -32,8 +29,9 @@ public class IA_GASTON {
                     mostrar_herramienta();
                 case "3" ->
                     modificar_herramienta();
-                case "5" ->{
-                    utils.Binary_file.generar_archivo();
+                case "4" ->{
+                    utils.Binary_file.volcar_binarios();
+                    utils.SQL.volcar_datos();
                     salir = true;
                 }
                 default ->
@@ -48,30 +46,32 @@ public class IA_GASTON {
 
         switch (seleccion) {
             case "1" ->
-                listCompresor.add(herramientas.Cibercompresor.crear());
+                listHerramientas.add(herramientas.Cibercompresor.crear());
             case "2" ->
-                listExcavador.add(herramientas.Ciberexcavadora.crear());
+                listHerramientas.add(herramientas.Ciberexcavadora.crear());
             case "3" ->
-                listMartillo.add(herramientas.Martillo.crear());
+                listHerramientas.add(herramientas.Martillo.crear());
             case "4" ->
-                listPala.add(herramientas.Pala.crear());
+                listHerramientas.add(herramientas.Pala.crear());
             default ->
                 System.out.println("Opción no disponible");
         }
     }
 
     public static void mostrar_herramienta() {
-        for (Herramienta item : listCompresor) {
-            System.out.println(item.toString());
-        }
-        for (Herramienta item : listExcavador) {
-            System.out.println(item.toString());
-        }
-        for (Herramienta item : listMartillo) {
-            System.out.println(item.toString());
-        }
-        for (Herramienta item : listPala) {
-            System.out.println(item.toString());
+        for (Herramienta item : listHerramientas) {
+            if (item instanceof Pala) {
+                System.out.println(item.toString());
+            }
+            if (item instanceof Cibercompresor) {
+                System.out.println(item.toString());
+            }
+            if (item instanceof Ciberexcavadora) {
+                System.out.println(item.toString());
+            }
+            if (item instanceof Martillo) {
+                System.out.println(item.toString());
+            }
         }
     }
     
@@ -82,19 +82,19 @@ public class IA_GASTON {
 
         switch (seleccion) {
             case "1" :
-                mod= modificar_herramienta(listCompresor);
+                mod= modificar_herramienta(1);
                 herramientas.Cibercompresor.modificar(mod);
                 break;
             case "2" :
-                mod= modificar_herramienta(listExcavador);
+                mod= modificar_herramienta(2);
                 herramientas.Ciberexcavadora.modificar(mod);
                 break;
             case "3" :
-                mod= modificar_herramienta(listMartillo);
+                mod= modificar_herramienta(3);
                 herramientas.Martillo.modificar(mod);
                 break;
             case "4" :
-                mod=  modificar_herramienta(listPala);
+                mod=  modificar_herramienta(4);
                 herramientas.Pala.modificar(mod);
                 break;
             default :
@@ -105,13 +105,24 @@ public class IA_GASTON {
         //luego sale el toString y modificar la características que quieras
     }
     
-    public static Herramienta modificar_herramienta(ArrayList<Herramienta> list){
-        for (Herramienta item : list) {
-            System.out.println(item.toString());
+    public static Herramienta modificar_herramienta(int seleccion){
+        for (Herramienta item : listHerramientas) {
+            if (item instanceof Cibercompresor && seleccion==1) {
+                System.out.println(item.toString());
+            }
+            if (item instanceof Ciberexcavadora && seleccion==2) {
+                System.out.println(item.toString());
+            }
+            if (item instanceof Martillo && seleccion==3) {
+                System.out.println(item.toString());
+            }
+            if (item instanceof Pala && seleccion==4) {
+                System.out.println(item.toString());
+            }
         }
         System.out.println("Qué herramienta deseas modificar?");
         String codigo=sc.nextLine();
-        for(Herramienta item:list){
+        for(Herramienta item:listHerramientas){
             if(item.codigo.equals(codigo)){ //llama al atributo codigo del objeto y lo comparamos
                 return item;
             }

@@ -1,5 +1,6 @@
 package herramientas;
 
+import java.io.Serializable;
 import utils.Codigo;
 import utils.Text;
 
@@ -7,7 +8,7 @@ import utils.Text;
  *
  * @author Lupoldo
  */
-public class Cibercompresor extends Herramienta {
+public class Cibercompresor extends Herramienta implements Serializable{
 
     //Atributos
     public int consumo;

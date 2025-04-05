@@ -1,5 +1,6 @@
 package herramientas;
 
+import java.io.Serializable;
 import utils.Codigo;
 import utils.Text;
 
@@ -7,7 +8,7 @@ import utils.Text;
  *
  * @author Lupoldo
  */
-public class Pala extends Herramienta {
+public class Pala extends Herramienta implements Serializable{
     //Atributos
     public int longMango;
     public String metal;

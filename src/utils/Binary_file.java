@@ -1,52 +1,88 @@
 package utils;
 
-import herramientas.Herramienta;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import main.IA_GASTON;
 /**
  *
- * @author Lupoldo
+ * @author Ana
  */
+
+import herramientas.*;
+import java.io.*;
+
 public class Binary_file {
 
-    public static void generar_archivo(){
+    //Files para los binarios
+    public static File file_excavadoras = new File("excavadoras.dat");
+    public static File file_martillos = new File("martillos.dat");
+    public static File file_palas = new File("palas.dat");
+    public static File file_compresores = new File("compresores.dat");
+    
+    public static void volcar_binarios() {
+        llenar_binarios();
+    }
+    
+    //Meter el arraylist de cada tipo de herramienta en el file correspondiente
+    public static void llenar_binarios() {
+        escribir_binarios(file_excavadoras,1);
+        escribir_binarios(file_martillos,2);
+        escribir_binarios(file_palas,3);
+        escribir_binarios(file_compresores,4);
+        System.out.println("Herramientas añadidas a los binarios");
+    }
+    
+    //Escribir los binarios del arraylist que le pases en el file que le pases
+    public static void escribir_binarios(File archivo, int seleccion) {
+        int contador=0;
         try {
-            File f = new File("objeto.dat");
-            FileOutputStream fos = new FileOutputStream(f);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(IA_GASTON.listPala);
-            oos.close();
-        } catch (FileNotFoundException fne) {
-            System.out.println("No existe fichero");
-        } catch (IOException io){
-            System.out.println(io.getMessage());
+            FileOutputStream fos = new FileOutputStream(archivo);
+            ObjectOutputStream escribir = new ObjectOutputStream(fos);
+            for (Herramienta item : main.IA_GASTON.listHerramientas) {
+                 if (item instanceof Ciberexcavadora && seleccion==1) {
+                    escribir.writeObject(main.IA_GASTON.listHerramientas.get(contador));
+                 }
+                 if (item instanceof Martillo && seleccion==2) {
+                    escribir.writeObject(main.IA_GASTON.listHerramientas.get(contador));
+                 }
+                 if (item instanceof Pala && seleccion==3) {
+                    escribir.writeObject(main.IA_GASTON.listHerramientas.get(contador));
+                 }
+                 if (item instanceof Cibercompresor && seleccion==4) {
+                    escribir.writeObject(main.IA_GASTON.listHerramientas.get(contador));
+                 }
+                 contador++;
+            }
+            escribir.close();
+
+        } catch (FileNotFoundException ex) {
+            System.out.println("Archivo no encontrado. "
+                    + ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println("Error al escribir en el archivo. "
+                    + ex.getMessage());
         }
     }
-
-    public static ArrayList<Herramienta> listHerramienta = new ArrayList<>();
-
-    public static void leer_archivo() throws IOException{
-        FileInputStream fis = null;
-        ObjectInputStream ois = null;
+    
+    
+    //Leer el binario que le pases(MIRAR)
+    public static Herramienta leer_binarios(File archivo) {
+        Herramienta leida = new Herramienta();
         try {
-            File f = new File("objeto.dat");
-            fis = new FileInputStream(f);
-            ois = new ObjectInputStream(fis);
-            ArrayList<Herramienta> ejemplo = (ArrayList<Herramienta>) ois.readObject();
-        } catch (IOException io) {
-            System.out.println("\n************FIN*******");
-        } catch(ClassNotFoundException cnf){
-            System.out.println("adad");
-        }finally {
-            ois.close();
-            fis.close();
+            FileInputStream fis = new FileInputStream(archivo);
+            ObjectInputStream leer = new ObjectInputStream(fis);
+            while (fis.available() > 0) {
+                leida = (Herramienta) leer.readObject();
+            }
+            leer.close();
+
+        } catch (FileNotFoundException ex) {
+            System.out.println("Archivo no encontrado. "
+                    + ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println("Error al escribir en el archivo. "
+                    + ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            System.out.println("La clase no existe " + ex.getMessage());
         }
+        return leida;
     }
+
 }

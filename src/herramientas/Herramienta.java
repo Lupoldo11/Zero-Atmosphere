@@ -1,12 +1,13 @@
 package herramientas;
 
+import java.io.Serializable;
 import utils.Text;
 
 /**
  *
  * @author Lupoldo
  */
-public class Herramienta {
+public class Herramienta implements Serializable{
 
     //Atributos
     public String codigo;
@@ -16,6 +17,8 @@ public class Herramienta {
     public Herramienta(String codigo) {
         this.codigo = codigo;
         this.proteccion = randoomProteccion();
+    }
+    public Herramienta() {
     }
 
     //Metodos Getter y Setter
