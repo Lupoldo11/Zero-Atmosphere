@@ -25,7 +25,8 @@ public class IA_EVA {
 
             switch (seleccion) {
                 case "1":
-                    if (check_automatico) {
+                   
+                    if (check_automatico ) {
                         reset();
                         IA_BOB.calculadorSeleccion();
                     } else {

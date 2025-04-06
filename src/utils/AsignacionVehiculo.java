@@ -12,6 +12,8 @@ public class AsignacionVehiculo {
     public static Vector<Vehiculo> listVehiculo = new Vector<>();
 
     public static void selectorVehiculos(int cantidad_personas, Vector<Persona> listPersonas) {
+        coches = 0;
+        motos = 0;
         int[] cantidad_vehiculos = utils.AsignacionVehiculo.organizacion(cantidad_personas);
         
         //Genera AeroCars
@@ -35,7 +37,7 @@ public class AsignacionVehiculo {
             } else if (cantidad_personas %4 >=1){
                 motos +=1;
             }
-        } else {
+        } else if(cantidad_personas > 0) {
             coches=2;
             cantidad_personas-=2;
             if (cantidad_personas >=3){
@@ -51,6 +53,7 @@ public class AsignacionVehiculo {
 
     public static int generarCoches(int cantidad_personas, Vector<Persona> listPersonas, int[] cantidad_vehiculos) {
         int contador = 0;
+        if(cantidad_personas == 0) return contador;
         if (cantidad_personas < 6) {
             for (int i = 0; i < 2; i++) {
                 Persona[] grupo = {listPersonas.get(contador)};
