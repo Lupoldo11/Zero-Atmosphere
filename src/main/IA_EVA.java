@@ -7,6 +7,7 @@ import java.util.Vector;
 import utils.Text;
 import personas.*;
 import aliens.*;
+import java.io.File;
 import mascotas.*;
 import utils.Idiomas;
 import utils.LectorTxt;
@@ -45,6 +46,14 @@ public class IA_EVA {
                     break;
                 case "4":
                     salida = true;
+                    break;
+                case "5":
+                    System.out.println("Opcion de herramientas");
+                    main.IA_ANTIA.menu();
+                    break;
+                case "6":
+                    System.out.println("Opcion guardar en la nube");
+                    utils.Binary_file.leer_txtBinario(new File("modificados.dat"));
                     break;
                 default:
                     System.out.println(Text.error_seleccion);

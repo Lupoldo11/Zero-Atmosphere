@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Vector;
 import aliens.Alien;
+import herramientas.Herramienta;
+import java.util.ArrayList;
 import mascotas.Mascota;
 import personas.Persona;
 import vehiculos.Vehiculo;
@@ -170,6 +172,8 @@ public class Text {
 
     //HashMap para asociacion mascota-dueño
     public static HashMap<String, String> mascota_dueño = new HashMap<>();
+    
+    public static ArrayList<Herramienta> listHerramientas2 = new ArrayList<>();
 
     //Variables usados en varias class
     public static int num_soldados, num_mineros;

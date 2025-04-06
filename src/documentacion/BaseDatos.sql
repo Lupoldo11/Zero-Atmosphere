@@ -41,8 +41,23 @@ CREATE TABLE Pala (
 );
 
 --Insertar datos
-INSERT INTO nombre_tabla (Codigo, Objeto_bin)
-VALUES ('codigo_del_objeto', LOAD_FILE('directorio');
+INSERT INTO Martillo (codigo, proteccion, consumo, sujecion)
+VALUES ('a',2.1,1,'a');
+
+INSERT INTO Ciberexcavadora (codigo, proteccion, consumo, traccion)
+VALUES ('a',2.1,1,'a');
+
+INSERT INTO Cibercompresor (codigo, proteccion, consumo, traccion)
+VALUES ('a',2.1,1,'a');
+
+INSERT INTO Pala (codigo, proteccion, long_mango, metal)
+VALUES ('a',2.1,1,'a');
+
+--Borrar registros de BBDD
+TRUNCATE TABLE cibercompresor;
+TRUNCATE TABLE ciberexcavadora;
+TRUNCATE TABLE pala;
+TRUNCATE TABLE martillo;
 
 --Modificar datos
 UPDATE nombre_tabla 
@@ -52,5 +67,5 @@ WHERE Codigo = 'codigo_del_objeto';
 
 --Usuario
 CREATE USER 'lopez'@'%' IDENTIFIED BY 'zero';
-GRANT SESSION, CREATE, SELECT, INSERT, UPDATE, DELETE ON zeroatmosfera.* TO 'lopez'@'%';
+GRANT DROP, SESSION, CREATE, SELECT, INSERT, UPDATE, DELETE ON zeroatmosfera.* TO 'lopez'@'%';
 FLUSH PRIVILEGES;

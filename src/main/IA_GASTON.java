@@ -31,8 +31,12 @@ public class IA_GASTON {
                     modificar_herramienta();
                 case "4" ->{
                     utils.Binary_file.volcar_binarios();
-                    utils.SQL.volcar_datos();
+                    utils.SQL.datos("volcar");
                     salir = true;
+                }
+                case "delete" ->{
+                    System.out.println("(Opcion Oculta) Se van a borrar los registros de la Base de Datos");
+                    utils.SQL.datos("borrar");
                 }
                 default ->
                     System.out.println("Opción no disponible");
