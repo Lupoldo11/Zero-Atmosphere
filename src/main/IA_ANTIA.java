@@ -111,3 +111,20 @@ public class IA_ANTIA {
         Text.listHerramientas2.clear();
     }
 }
+/*
+    System.out.println(Text.menu_modificar);
+        String seleccion = Text.intro.nextLine();
+        boolean exit = false;
+
+
+    int contador = 0;
+    System.out.println(Text.pregunta_codigo);
+    String codigo = Text.intro.nextLine();
+    
+    System.out.println(Text.seguir_modificando);
+        seleccion = Text.intro.nextLine();
+        if (seleccion.equals("1")) {
+            exit = true;
+            System.out.println(Text.herramientas_anadidas);
+        }
+*/

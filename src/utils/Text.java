@@ -17,12 +17,11 @@ import vehiculos.Vehiculo;
 public class Text {
 
     // Contenido String o textual (por defecto)
-    // Menus 
-    public static String menu_seleccion_inicio = "Lista de opciones: \n1) IA_Bob (Seleccionable) \n2) IA_Alonso (Automático) \n3) Ajustes \n4) Salir";
-    public static String menu_ajustes = "1) Cambiar directorio \n2) Cambiar idioma \n3) Factura \n4) Salir"; 
-    public static String menu_factura = "1.Ver factura en pantalla \n2.Guardar factura \n3.Salir";
+     public static String menu_seleccion_inicio = "Lista de opciones: \n1) IA_Bob (Seleccionable) \n2) IA_Alonso (Automático) \n3) Ajustes \n4) Salir";
+    public static String menu_ajustes = "1) Cambiar directorio \n2) Cambiar idioma \n3)Factura \n4)Salir";
+    public static String menu_factura = "1.Ver factura en pantalla \n 2.Guardar factura\n 3.Salir";
     public static String cierre_sesion = "Cerrando sesion";
-    
+
     // Errores
     public static String error = "Error";
     public static String error_seleccion = "Opción no disponible";
@@ -32,37 +31,32 @@ public class Text {
     public static String error_dir_no_ajustado = " directorio no ajustado";
     public static String error_guardar_factura = "Error al guardar la factura";
     public static String error_valor_invalido = "El valor no es válido";
-    
-    // IA
-    // IA General
+
     public static String accion = "Accion";
     public static String listado_de = "Listado de";
     public static String numero_de = "Numero de";
     public static String tamanio_lista = "Tamaño lista: ";
-    // IA Aliens
-    public static String pregunta_aliens = "¿Cuántos alienígenas hay en la nave?";
-    // IA Distancia
+    public static String pregunta_aliens = "¿Cuántos alienígenas hay en la nave ?";
     public static String pregunta_distancia = "¿Cual es la distancia hacia la otra nave?";
     public static String respuesta_distancia = "La distancia con la nave es de: ";
     public static String anios_luz = " año/luz. \nPor tanto es: ";
-    // IA Duracion
     public static String duracion_mision = "La misión durará ";
     public static String dias = " días";
-    // IA Coste
-    public static String coste_mision = "El coste total del operativo es de: " ;
-    // IA Personas
+    public static String coste_mision = "El coste total del operativo es de: ";
     public static String cuantos_soldados = "¿Cuántos soldados quieres?";
     public static String cuantos_mineros = "¿Cuántos mineros quieres?";
-    
+    public static String opcion_herramientas = "Opcion de herramientas";
+    public static String opcion_nube = "Opcion guardar en la nube";
+
     // Configuracion
     public static String intro_directorio = "Introduce directorio: ";
     public static String dir_enlazado = "Directorio enlazado y con el contenido requerido";
-    
+
     //Aliens
     public static String alien_come = "Hmmm";
     public static String alien_duerme = "Duermiendo";
     public static String alien_ataca = "Ataque!";
-    
+
     // Mascotas
     public static String mascota_come = " esta comiendo";
     public static String mascota_duerme = " esta durmiendo";
@@ -88,7 +82,7 @@ public class Text {
     public static String perro_nombre = "Perro cuyo nombre es ";
     public static String str_peso = ", pesa ";
     public static String str_tamanio = "kgs, tamaño: ";
-    
+
     //Personas
     public static String str_minero = "Trabajo: Minero: ";
     public static String str_soldado = "\nTrabajo: Soldado: ";
@@ -100,7 +94,7 @@ public class Text {
     public static String rango_capitan = "Capitán";
     public static String rango_sargento = "Sargento";
     public static String rango_tropa = "Tropa";
-    
+
     // Prefijo odigo
     public static String pf_turbojet = "tjet";
     public static String pf_minero = "min";
@@ -111,7 +105,7 @@ public class Text {
     public static String pf_herramienta = "her";
 
     // Factura
-    public static String str_coste_mision ="COSTE DE LA MISION\n";
+    public static String str_coste_mision = "COSTE DE LA MISION\n";
     public static String str_personas_coste = "Personas             Coste/Dia       Total\n";
     public static String yurs = " yurs\n";
     public static String coste_minero = "Minero            20yurs       \"";
@@ -138,14 +132,49 @@ public class Text {
     public static String economico = "economico";
     public static String estelar = "estelar";
     public static String vehiculo_tj = "Vehiculo{" + " turbojet=";
+    public static String vehiculos_usados = "Vehículos utilizados:";
     
     // Herramientas
+    public static String compresor = "Cibercompresor";
+    public static String excavadora = "Ciberexcavadora";
+    public static String martillo = "Martillo";
+    public static String pala = "Pala";
     public static String metal_puro = "puro";
     public static String metal_aleacion = "aleacion";
     public static String sujecion_manual = "manual";
     public static String sujecion_correa = "correa";
     public static String traccion_ruedas = "ruedas";
     public static String traccion_oruga = "oruga";
+    public static String pregunta_consumo = "Cuanto consumo va a tener?";
+    public static String menu_metal = "Tipo de metal: 1) puro o 2) Aleacion";
+    public static String modificar_atributo = "Qué atributo quieres modificar?";
+    public static String error_cambiar_codigo = "El código no se puede cambiar";
+    public static String proteccion = "Proteccion";
+    public static String consumo = "Consumo";
+    public static String traccion = "Traccion";
+    public static String pregunta_proteccion = "Cuanta protección va a tener?";
+    public static String pregunta_mango = "Cuanto de lago va a ser el mango?";
+    public static String metal = "Metal";
+    public static String longitud = "Longitud";
+    public static String sujecion = "Sujecion";
+    public static String menu_traccion = "Tipo de tracción: 1)Oruga o 2)Ruedas";
+
+    //IA_ANTIA
+    public static String menu_modificar = "Que quieres hacer: 1) Salir / 2) Modificar";
+    public static String pregunta_codigo = "Que Codigo tiene?";
+    public static String seguir_modificando = "Quieres seguir modificando?: 1) No / 2) Sí";
+    public static String herramientas_anadidas = "Herramientas añadidas a los binarios";
+    
+    //IA_GASTON
+    public static String menu_ia_gaston = "1)Crear Herramienta \n2)Mostrar Herramienta \n3)Modificar Herramienta \n4)Salir";
+    public static String borrar_datos_bbdd = "(Opcion Oculta) Se van a borrar los registros de la Base de Datos";
+    public static String menu_herramientas = "1)Cibercompresor \n2)Ciberexcavadora \n3)Martillo \n4)Pala";
+    public static String modificar_herramienta = "Qué herramienta deseas modificar?";
+    
+    //Idiomas
+    public static String menu_idioma = "Elige un idioma:\n 1.Espanol\n 2.English";
+    public static String cambio_espanol = "Idioma cambiado a Espanol";
+    public static String cambio_ingles = "Language changed to English";
     
     //String para funciones
     public static String guiones = "-----------------------------------------------";

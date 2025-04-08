@@ -99,4 +99,38 @@ public class Cibercompresor extends Herramienta implements Serializable{
                 "\n3.Consumo: "+this.consumo+"\n4.Tracción: "+this.traccion;
         return texto;
     }
+    
 }
+/*
+public void setConsumo() {
+        System.out.println(Text.pregunta_consumo);
+        int consum = Text.intro.nextInt();
+        Text.intro.nextLine();
+
+
+public void setTraccion() {
+        System.out.println(Text.menu_traccion);
+        String trac= Text.intro.nextLine();
+        trac = trac.toLowerCase();
+
+
+public static void modificar(Herramienta item){
+        Cibercompresor compresor= (Cibercompresor) item;
+        System.out.println(compresor.toString());
+        System.out.println(Text.modificar_atributo);
+        String posicion = Text.intro.nextLine();
+        
+        switch(posicion){
+            case"1"-> System.out.println(Text.error_cambiar_codigo);
+            case"2"-> compresor.setProteccion(); //Modificar para entrada de valores
+            case"3"-> compresor.setConsumo(); //Modificar para entrada de valores
+            case"4"-> compresor.setTraccion(); //Modificar para entrada de valores
+            default->System.out.println(Text.error_seleccion);
+        }
+    }
+
+    public String toString(){
+        String texto= Text.compresor +" \n1." + Text.str_codigo+": "+super.codigo+"\n2."+Text.proteccion+": "+super.proteccion+"\n3."+Text.consumo+": "+this.consumo+"\n4."+Text.traccion+": "+this.traccion;
+        return texto;
+    }
+*/

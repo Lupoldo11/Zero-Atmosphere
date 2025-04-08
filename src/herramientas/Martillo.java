@@ -91,3 +91,24 @@ public class Martillo extends Herramienta implements Serializable{
         return texto;
     }
 }
+/*
+public static void modificar(Herramienta item){
+        Martillo martillo= (Martillo) item;
+        System.out.println(martillo.toString());
+        System.out.println(Text.modificar_atributo);
+        String posicion = Text.intro.nextLine();
+        
+        switch(posicion){
+            case"1"-> System.out.println("El código no se puede cambiar");
+            case"2"-> martillo.setProteccion(); //Modificar para entrada de valores
+            case"3"-> martillo.setConsumo(0); //Modificar para entrada de valores
+            case"4"-> martillo.setSujecion(posicion); //Modificar para entrada de valores
+            default->System.out.println(Text.error_seleccion);
+        }
+    }
+
+   public String toString(){
+        String texto= Text.martillo +" \n1." + Text.str_codigo+": "+super.codigo+"\n2."+Text.proteccion+": "+super.proteccion+"\n3."+Text.consumo+": "+this.consumo+"\n4."+Text.sujecion+": "+this.sujecion;
+        return texto;
+    }
+*/

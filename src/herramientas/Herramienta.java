@@ -48,3 +48,8 @@ public class Herramienta implements Serializable{
     }
     
 }
+/*
+    public void setProteccion() {
+        System.out.println(Text.pregunta_proteccion);
+        int protec = Text.intro.nextInt();
+*/

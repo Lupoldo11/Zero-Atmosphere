@@ -26,7 +26,7 @@ public class Binary_file {
         escribir_binarios(file_martillos, 2);
         escribir_binarios(file_palas, 3);
         escribir_binarios(file_compresores, 4);
-        System.out.println("Herramientas añadidas a los binarios");
+        System.out.println(Text.herramientas_anadidas);
     }
 
     //Escribir los binarios del arraylist que le pases en el file que le pases

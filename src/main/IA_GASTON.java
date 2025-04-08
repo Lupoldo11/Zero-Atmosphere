@@ -134,3 +134,52 @@ public class IA_GASTON {
         return null;
     }
 }
+/*
+System.out.println(Text.menu_ia_gaston);
+            String seleccion = sc.nextLine();
+            switch (seleccion) {
+                case "1" ->
+                    crear_herramienta();
+                case "2" ->
+                    mostrar_herramienta();
+                case "3" ->
+                    modificar_herramienta();
+                case "4" ->{
+                    utils.Binary_file.volcar_binarios();
+                    utils.SQL.datos("volcar");
+                    salir = true;
+                }
+                case "delete" ->{
+                    System.out.println(Text.borrar_datos_bbdd);
+                    utils.SQL.datos("borrar");
+                }
+                default ->
+                    System.out.println(Text.error_seleccion);
+            }
+
+public static void crear_herramienta() {
+        System.out.println(Text.menu_herramientas);
+        String seleccion = sc.nextLine(); 
+
+        switch (seleccion) {
+            case "1" ->
+                listHerramientas.add(herramientas.Cibercompresor.crear());
+            case "2" ->
+                listHerramientas.add(herramientas.Ciberexcavadora.crear());
+            case "3" ->
+                listHerramientas.add(herramientas.Martillo.crear());
+            case "4" ->
+                listHerramientas.add(herramientas.Pala.crear());
+            default ->
+                System.out.println(Text.error_seleccion);
+        }
+    }
+
+System.out.println("Qué herramienta deseas modificar?");
+        String codigo=sc.nextLine();
+        for(Herramienta item:listHerramientas){
+            if(item.codigo.equals(codigo)){ //llama al atributo codigo del objeto y lo comparamos
+                return item;
+            }
+        }
+*/

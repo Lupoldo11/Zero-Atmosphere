@@ -99,3 +99,34 @@ public class Pala extends Herramienta implements Serializable{
         return texto;
     }
 }
+/*
+public void setLongMango() {
+        System.out.println(Text.pregunta_mango);
+        int largoMango = Text.intro.nextInt();
+        Text.intro.nextLine();
+
+ public void setMetal() {
+        System.out.println(Text.menu_metal);
+        String metalmod= Text.intro.nextLine();
+        metalmod = metalmod.toLowerCase();
+
+public static void modificar(Herramienta item){
+        Pala pala= (Pala) item;
+        System.out.println(pala.toString());
+        System.out.println(Text.modificar_atributo);
+        String posicion = Text.intro.nextLine();
+        
+        switch(posicion){
+            case"1"-> System.out.println("El código no se puede cambiar");
+            case"2"-> pala.setProteccion(); //Modificar para entrada de valores
+            case"3"-> pala.setMetal(); //Modificar para entrada de valores
+            case"4"-> pala.setLongMango(); //Modificar para entrada de valores
+           default->System.out.println(Text.error_seleccion);
+        }
+    }
+
+public String toString(){
+        String texto= Text.martillo +" \n1." + Text.str_codigo+": "+super.codigo+"\n2."+Text.proteccion+": "+super.proteccion+"\n3."+Text.metal+": "+this.metal+"\n4."+Text.longitud+": "+this.longMango;
+        return texto;
+    }
+*/

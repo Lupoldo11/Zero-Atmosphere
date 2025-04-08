@@ -14,16 +14,16 @@ public class Idiomas {
     //Menu cambio de idioma
     public static void cambiar_idioma() {
         cargarProperties();
-        System.out.println("Elige un idioma:\n 1.Espanol\n 2.English");
+        System.out.println(Text.menu_idioma);
         String seleccion = intro.nextLine();
         switch (seleccion) {
             case "1" -> {
-                System.out.println("Idioma cambiado a Espanol");
+                System.out.println(Text.cambio_espanol);
                 seleccion_properties(propsEsp);
 
             }
             case "2" -> {
-                System.out.println("Language changed to English");
+                System.out.println(Text.cambio_ingles);
                 seleccion_properties(propsEng);
             }
             default ->
@@ -40,7 +40,7 @@ public class Idiomas {
             propsEsp.load(urlPropsEsp);
 
         } catch (Exception e) {
-            System.out.println("Error al cargar properties");
+            System.out.println(Text.cambio_ingles);
         }
         try (InputStream urlPropsEng = new FileInputStream("src/utils/english.properties")) {
             propsEng.load(urlPropsEng);
@@ -48,7 +48,7 @@ public class Idiomas {
             System.out.println(cierre_sesion);
 
         } catch (Exception e) {
-            System.out.println("Error al cargar properties");
+            System.out.println(Text.cambio_ingles);
         }
     }
 
@@ -69,7 +69,7 @@ public class Idiomas {
         error_dir_no_archivos = props.getProperty("error_dir_no_archivos");
         error_dir_no_ajustado = props.getProperty("error_dir_no_ajustado");
         error_guardar_factura = props.getProperty("error_guardar_factura");
-
+        error_valor_invalido = props.getProperty("error_valor_invalido");
         // IA
         // IA General
         accion = props.getProperty("accion");
@@ -90,7 +90,10 @@ public class Idiomas {
         // IA Personas
         cuantos_soldados = props.getProperty("cuantos_soldados");
         cuantos_mineros = props.getProperty("cuantos_mineros");
-
+        
+        opcion_herramientas = props.getProperty("opcion_herramientas");
+        opcion_nube = props.getProperty("opcion_nube");
+                
         // Configuracion
         intro_directorio = props.getProperty("intro_directorio");
         dir_enlazado = props.getProperty("dir_enlazado");
@@ -145,6 +148,7 @@ public class Idiomas {
         pf_mascota = props.getProperty("pf_mascota");
         pf_alien = props.getProperty("pf_alien");
         pf_aerocar = props.getProperty("pf_aerocar");
+        pf_herramienta = props.getProperty("pf_herramienta");
 
         // Factura
         str_coste_mision = props.getProperty("");
@@ -155,5 +159,67 @@ public class Idiomas {
         coste_vehiculos = props.getProperty("coste_vehiculos");
         coste_aliens = props.getProperty("coste_aliens");
         fac_guardada = props.getProperty("fac_guardada");
+        
+        // Vehiculos
+        arranca = props.getProperty("arranca");
+        apagado = props.getProperty("apagado");
+        bike = props.getProperty("bike");
+        tripulantes = props.getProperty("tripulantes");
+        deposito_lleno = props.getProperty("deposito_lleno");
+        demasiada_gasolina = props.getProperty("demasiada_gasolina");
+        str_estado_deposito = props.getProperty("str_estado_deposito");
+        gasolina_falta = props.getProperty("gasolina_falta");
+        car = props.getProperty("car");
+        marca = props.getProperty("marca");
+        turbojet = props.getProperty("turbojet");
+        potencia = props.getProperty("potencia");
+        str_gasto_carburante = props.getProperty("str_gasto_carburante");
+        str_codigo = props.getProperty("str_codigo");
+         economico = props.getProperty("economico");
+        estelar = props.getProperty("estelar");
+        vehiculo_tj = props.getProperty("vehiculo_tj");
+        vehiculos_usados = props.getProperty("vehiculos_usados");
+        
+        //Herramientas
+        compresor = props.getProperty("compresor");
+        excavadora = props.getProperty("excavadora");
+        martillo = props.getProperty("martillo");
+        pala = props.getProperty("pala");
+        metal_puro = props.getProperty("metal_puro");
+        metal_aleacion = props.getProperty("metal_aleacion");
+        sujecion_manual = props.getProperty("sujecion_manual");
+        sujecion_correa = props.getProperty("sujecion_correa");
+        traccion_ruedas = props.getProperty("traccion_ruedas");
+        traccion_oruga = props.getProperty("traccion_oruga");
+        pregunta_consumo = props.getProperty("pregunta_consumo");
+        menu_metal = props.getProperty("menu_metal");
+        modificar_atributo = props.getProperty("modificar_atributo");
+        error_cambiar_codigo = props.getProperty("error_cambiar_codigo");
+        proteccion = props.getProperty("proteccion");
+        consumo = props.getProperty("consumo");
+        traccion = props.getProperty("traccion");
+        pregunta_proteccion = props.getProperty("pregunta_proteccion");
+        pregunta_mango = props.getProperty("pregunta_mango");
+        metal = props.getProperty("metal");
+        longitud = props.getProperty("longitud");
+        sujecion  = props.getProperty("sujecion");
+        menu_traccion = props.getProperty("menu_traccion");
+        
+        //IA_ANTIA
+        menu_modificar = props.getProperty("menu_modificar");
+        pregunta_codigo = props.getProperty("pregunta_codigo");
+        seguir_modificando  = props.getProperty("seguir_modificando");
+        herramientas_anadidas = props.getProperty("herramientas_anadidas");
+        
+        //IA_GASTON
+        menu_ia_gaston = props.getProperty("menu_ia_gaston");
+        borrar_datos_bbdd = props.getProperty("borrar_datos_bbdd");
+        menu_herramientas  = props.getProperty("menu_herramientas");
+        modificar_herramienta = props.getProperty("modificar_herramienta");
+        
+        //Idiomas
+        menu_idioma = props.getProperty("menu_idioman");
+        cambio_espanol = props.getProperty("cambio_espanol");
+        cambio_ingles  = props.getProperty("cambio_ingles");
     }
 }
